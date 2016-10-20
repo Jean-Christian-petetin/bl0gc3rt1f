@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin/add/article")
+     * @Route("/admin/add/article",name="ajoutArticle")
      * @Template("AdminBundle:Default:ajoutArticle.html.twig")
      */
     //la route 
@@ -19,7 +19,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/edit/article")
+     * @Route("/admin/edit/article",name="editArticle")
      * @Template("AdminBundle:Default:modifArticle.html.twig")
      */
     public function editNews()
@@ -27,7 +27,7 @@ class AdminController extends Controller
         return null;
     }
     /**
-     * @Route("/admin/update/article")
+     * @Route("/admin/update/article",name="validNews")
      */
     public function updateNews()
     {
@@ -35,7 +35,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/delete/news")
+     * @Route("/admin/delete/news",name="deleteNews")
      */
     public function deleteNews()
     {
@@ -43,7 +43,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/add/profils")
+     * @Route("/admin/add/profils",name="addProfils")
      * @Template("AdminBundle:Default:ajoutProfils.html.twig")
      */
     public function addProfils()
@@ -52,7 +52,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/edit/profils")
+     * @Route("/admin/edit/profils",name="editProfils")
      * @Template("AdminBundle:Default:modifProfils.html.twig")
      */
     public function editProfils()
@@ -61,7 +61,7 @@ class AdminController extends Controller
     }
            
     /**
-     * @Route("/admin/update/profils")
+     * @Route("/admin/update/profils",name="validProfils")
      */
     public function updateProfils()
     {
@@ -69,7 +69,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/delete/profils") 
+     * @Route("/admin/delete/profils",name="deleteProfils") 
      */
     public function deleteProfils()
     {
