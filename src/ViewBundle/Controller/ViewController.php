@@ -17,12 +17,17 @@ class ViewController extends Controller
         return null;
     }
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="admin")
      * @Template("ViewBundle:Default:admin.html.twig")
      */
     public function getArticle()
     {
-        return null;
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On va chercher en base de donnée toutes les instances de l'entité Article.
+        $article = $em->getRepository("AdminBundle:Article")->findAll();
+        //On lie chaque article dans une variable.
+        return array("varArticle" => $article);
     }
     
     /**

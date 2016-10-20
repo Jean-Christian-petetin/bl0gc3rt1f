@@ -2,20 +2,49 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Entity\Article;
+use AdminBundle\Form\ArticleType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin/add/article")
+     * @Route("/admin/formAddArticle")
      * @Template("AdminBundle:Default:ajoutArticle.html.twig")
      */
-    //la route 
-    public function addNews()
+    public function getformAddArticle()
     {
-        return null;
+        //On crée un formulaire a l'appel de la vue et on instancie un nouvel objet Article.
+        $f = $this->createForm(ArticleType::class, new Article());
+        //On crée la vue avec le formulaire précédement crée.
+        return array("formAddNews" => $f->createView());
+    }
+
+
+    /**
+     * @Route("/admin/add/article", name="valid")
+     */
+    //la route 
+    public function addNews(Request $request)
+    {
+        //On crée une nouvelle instance que l'on stocke dans la variable.
+        $addNews = new Article();
+        //On crée un formulaire (une zone en mémoire tampon est attribuer le temps d'envoyé tout en base de données).
+        $f = $this->createForm(ArticleType::class, $addNews);
+        //On lie les champs de la vue et le formulaire.
+        $f->handleRequest($request);
+        
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On enregistre en mémoire le formulaire avec les champs remplis.
+        $em->persist($addNews);
+        //On envoie le tout dans la base de donnée
+        $em->flush();
+        
+        return $this->redirectToRoute('admin');
     }
     
     /**
