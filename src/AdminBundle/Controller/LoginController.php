@@ -3,6 +3,10 @@
 
 namespace AdminBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
+
 /**
  * Description of LoginController
  *
@@ -14,7 +18,7 @@ class LoginController extends Controller
      * c'est une méthode qui est déclarer par le contrôleur mais
      * la requête est intercepté par la methode formLogin par le
      * fichier security.yml
-     * @Route("/loginCheck",name="loginCheck"
+     * @Route("/loginCheck",name="loginCheck")
      * @throws Exception
      */
     public function LoginCheck() {
