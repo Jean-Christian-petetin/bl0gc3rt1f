@@ -31,7 +31,7 @@ class ViewController extends Controller
     }
     
     /**
-     * @Route("/admin/profils")
+     * @Route("/admin/profils",name="adminProfils")
      * @Template("ViewBundle:Default:profils.html.twig")
      */
     public function getProfils()
