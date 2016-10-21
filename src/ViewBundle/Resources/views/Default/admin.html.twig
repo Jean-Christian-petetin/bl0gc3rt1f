@@ -1,6 +1,13 @@
 {%extends "base.html.twig"%}
+
+{% block title %}
+    {{ parent() }}
+    - Administration
+    {% endblock %}
 {% block body %}
 <h1>ADMIN</h1>
+
+<a href="{{ path('addArticle') }}">Ajouter</a>
 
 {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
 <div>
@@ -13,8 +20,8 @@
         <p>{{ article.date }}</p>
         <p>{{ article.auteur }}</p>
     </div>
-    <button type="button">Modifier</button>
-    <a href="{{ path('deleteNews',{'id':article.id})}}">Delete</a>
+    <a href="{{ path('editArticle',{'id':article.id})}}">Edit</a>
+    <a href="{{ path('deleteNews',{'id':article.id})}}">Edit</a>
 </div>
         
 {% endfor %}
