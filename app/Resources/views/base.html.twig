@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
     </head>
     <body>
         <form action="{{ path('loginCheck')}}" method="post">
@@ -17,7 +19,7 @@
                 <li><a href="{{ path('home')}}">News</a></li>
                 <li><a href="{{ path('admin')}}">Admin</a></li>
                 <li><a href="{{ path('adminProfils')}}">Profils</a></li>
-                <li><a href="{{ path('logOut')}}">logout</a></li>
+                <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
             </ul>
         </nav>
        
