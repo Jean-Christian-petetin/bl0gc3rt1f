@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin/formAddArticle")
+     * @Route("/admin/formAddArticle", name="addArticle")
      * @Template("AdminBundle:Default:ajoutArticle.html.twig")
      */
     public function getformAddArticle()
