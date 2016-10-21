@@ -7,16 +7,20 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-            <nav>
-                <ul>
-                    <li><a {#href="{{ path('News') }}"#}>News</a></li>
-                    <li><a {#href="{{ path('Admin') }}"#}>Admin</a></li>
-                    <li><a {#href="{{ path('Profil') }}"#}>Profil</a></li>
-                    <li><a {#href="{{ path('Login') }}"#}>Login</a></li>
-                    <li><a {#href="{{ path('Logout') }}"#}>Logout</a></li>
-                </ul>
-            </nav>
-        
+        <form action="{{ path('loginCheck')}}" method="post">
+            <input type="text" id="email" name="_username" placeholder="Email" value=""/>
+            <input type="password" id="motdepasse" name="_password" placeholder="mot de passe" value=""/>
+            <input type="submit" value="Login"/>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="{{ path('home')}}">News</a></li>
+                <li><a href="{{ path('admin')}}">Admin</a></li>
+                <li><a href="{{ path('adminProfils')}}">Profils</a></li>
+                <li><a href="{{ path('logOut')}}">logout</a></li>
+            </ul>
+        </nav>
+       
         {% block body %}
         {% endblock %}
         {% block javascripts %}{% endblock %}

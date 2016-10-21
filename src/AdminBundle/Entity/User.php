@@ -3,6 +3,8 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Serializable;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface, Serializable
 {
     /**
      * @var int
@@ -57,9 +59,9 @@ class User
     private $avatar;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="role", type="string", length=255)
+     * @ORM\Column(name="role", type="array")
      */
     private $role;
 
@@ -204,8 +206,6 @@ class User
     public function setRole($role)
     {
         $this->role = $role;
-
-        return $this;
     }
 
     /**
@@ -217,5 +217,42 @@ class User
     {
         return $this->role;
     }
+
+    public function eraseCredentials() {
+        
+    }
+
+    public function getPassword() {
+        return $this->motdepasse;
+    }
+
+    public function getRoles() {
+        return $this->role;
+    }
+
+    public function getSalt() {
+        
+    }
+
+    public function getUsername() {
+        return $this->email;
+    }
+
+    public function serialize() {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->motdepasse
+        ));
+    }
+
+    public function unserialize($serialized) {
+        list(
+            $this->id,
+            $this->email,
+            $this->motdepasse
+            ) = unserialize($serialized);
+    }
+
 }
 

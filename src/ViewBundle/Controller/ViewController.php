@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class ViewController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      * @Template("ViewBundle:Default:home.html.twig")
      */
     public function getHome()
