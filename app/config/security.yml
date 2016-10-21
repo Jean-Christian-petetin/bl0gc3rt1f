@@ -30,7 +30,7 @@ security:
             form_login:
                 login_path: loginForm
                 check_path: loginCheck
-                defalt_target_path: /admin
+                default_target_path: /admin
             logout:
                 path: logout
                 target: /
