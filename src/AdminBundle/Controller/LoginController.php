@@ -3,6 +3,7 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -33,4 +34,24 @@ class LoginController extends Controller
         throw new Exception('Verifiez votre fichier security');
     }
  
+    /**
+     * là c'est la petite methode pour ajouter un utilisateur 
+     * @Route("/add",name="add")
+     * @throws Exception
+     */
+    public function add() {
+        $u = new User();
+        $u->setNom("admin");
+        $u->setPrenom("admin");
+        $u->setEmail("admin@admin.com");
+        $u->setMotDePasse("admin");
+        $u->setAvatar("imageAdmin");
+        $u->setRole(array("ROLE_ADMIN"));
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($u);
+        $em->flush();
+        
+        return $this->redirectToRoute("home");
+    }
 }

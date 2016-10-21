@@ -2,7 +2,7 @@
 {% block body %}
 <h1>ADMIN</h1>
 
-{% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
+{% for article in varArticle %} {# On apple cette boucle pour chanque instance de l'entité #}
     <div>
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
         <h3>{{ article.titre }}</h3>

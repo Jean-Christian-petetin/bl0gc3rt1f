@@ -9,7 +9,6 @@ security:
                 property: email
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
-    providers:
         in_memory:
             memory: ~
             
@@ -28,11 +27,11 @@ security:
             provider: gestion
             
             form_login:
-                login_path: loginForm
+                login_path: home
                 check_path: loginCheck
-                defalt_target_path: /admin
+#                default_target_path: /admin
             logout:
-                path: logout
+                path: logOut
                 target: /
                 
     access_control:
