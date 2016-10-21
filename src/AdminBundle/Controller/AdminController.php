@@ -37,7 +37,7 @@ class AdminController extends Controller
         //On lie les champs de la vue et le formulaire.
         $f->handleRequest($request);
         
-        //On appele l'entity manager de doctrine.
+        //On appele l'entity manager
         $em = $this->getDoctrine()->getManager();
         //On enregistre en mémoire le formulaire avec les champs remplis.
         $em->persist($addNews);
@@ -46,62 +46,106 @@ class AdminController extends Controller
         
         return $this->redirectToRoute('admin');
     }
-    
+    //cette fonction permet de supprimer un article en prennant son id
+    /**
+     * @Route("/admin/delete/article/{id}",name="deleteNews")
+     */
+    public function deleteNews($id)
+    {   //on recupere l'entity manager
+        $em = $this->getDoctrine()->getEntityManager();
+        //on recupere l'id de l'article 
+        $getId = $em->find("AdminBundle:Article", $id);
+        //on supprime l'article choisi
+        $em->remove($getId);
+        //on envoie les informations à la base de donnée
+        $em->flush();
+        //on redirige vers la route selectionnée
+        return $this->redirectToRoute('admin');
+    }
+    //cette fonction permet de modifier un article
     /**
      * @Route("/admin/edit/article",name="editArticle")
      * @Template("AdminBundle:Default:modifArticle.html.twig")
      */
-    public function editNews()
-    {
-        return null;
+    public function editNews($id,Article $up)
+    {   //on retourne un formulaire avec ses valeurs en paramètre
+        //avec l'id correspondant
+        return array("formArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
+            
     }
     /**
-     * @Route("/admin/update/article",name="validNews")
+     * @Route("/admin/update/article/{id}",name="validNews")
      */
-    public function updateNews()
-    {
-        return null;
+    public function updateNews(Request $request , Article $up)
+    {   //on appelle l'entity manager
+        $em = $this->getDoctrine()->getManager();
+        //on crée un formulaire
+        $f=$this->createForm(ArticleType::class,$up);
+        //on fait une verification
+        $f->handleRequest($request);
+        //on valide les modifications effectuées
+        if($f->isValid())
+        {   //on valide les modif
+            $em->merge($up);
+            //on envoie totalité dans la base de donnée
+            $em->flush();
+        }
+        //on redirige vers la route selectionnée
+        return $this->redirectToRoute('admin');
     }
     
-    /**
-     * @Route("/admin/delete/news",name="deleteNews")
-     */
-    public function deleteNews()
-    {
-        return null;
-    }
     
+    //les fonctions pour le profil sont identique a ceux utiliser pour les articles
     /**
      * @Route("/admin/add/profils",name="addProfils")
      * @Template("AdminBundle:Default:ajoutProfils.html.twig")
      */
-    public function addProfils()
-    {
+    public function addProfils(Request $request)
+    {   
+        $addPro = new Article();
+        $f = $this->createForm(ArticleType::class, $addPro);
+        $f->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($addPro);
+        $em->flush();
         return null;
+    }
+    
+    /**
+     * @Route("/admin/delete/profils/{id}",name="deleteProfils") 
+     */
+    public function deleteProfils($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $getId = $em->find("AdminBundle:Profils", $id);
+        $em->remove($getId);
+        $em->flush();
+        return $this->redirectToRoute('adminProfils');
     }
     
     /**
      * @Route("/admin/edit/profils",name="editProfils")
      * @Template("AdminBundle:Default:modifProfils.html.twig")
      */
-    public function editProfils()
+    public function editProfils($id,Profils $up)
     {
-        return null;
-    }
-           
-    /**
-     * @Route("/admin/update/profils",name="validProfils")
-     */
-    public function updateProfils()
-    {
-        return null;
+        return array("formProfils" => $this->createForm(ProfilsType::class,$up)->createView(),'id'=>$id);
     }
     
     /**
-     * @Route("/admin/delete/profils",name="deleteProfils") 
+     * @Route("/admin/update/profils/{id}",name="validProfils")
      */
-    public function deleteProfils()
+    public function updateProfils(Request $request , Profils $up)
     {
-        return null;
+        $em = $this->getDoctrine()->getManager();
+        $f=$this->createForm(ArticleType::class,$up);
+        $f->handleRequest($request);
+        if($f->isValid())
+        {   
+            $em->merge($up);
+            $em->flush();
+        }
+        return $this->redirectToRoute('adminProfils');
     }
+    
 }
