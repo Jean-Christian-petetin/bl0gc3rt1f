@@ -1,5 +1,4 @@
 <?php
-
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Article;
@@ -8,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
+
 
 class AdminController extends Controller
 {
@@ -64,13 +65,13 @@ class AdminController extends Controller
     }
     //cette fonction permet de modifier un article
     /**
-     * @Route("/admin/edit/article",name="editArticle")
+     * @Route("/admin/edit/article/{id}",name="editArticle")
      * @Template("AdminBundle:Default:modifArticle.html.twig")
      */
     public function editNews($id,Article $up)
     {   //on retourne un formulaire avec ses valeurs en paramètre
         //avec l'id correspondant
-        return array("formArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
+        return array("formAddArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
             
     }
     /**

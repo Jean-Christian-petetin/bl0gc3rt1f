@@ -1,4 +1,13 @@
 {%extends "base.html.twig"%}
+
+{% block title %}
+    {{ parent() }}
+    Modif
+{% endblock %}
+
 {% block body %}
 <h1>MODIF ARTICLE</h1>
+<div>
+    {{form_start(formAddArticle,{'attr':{'action':path('validNews',{'id':id})}})}}
+    {{form_end(formAddArticle)}}
 {% endblock %}
