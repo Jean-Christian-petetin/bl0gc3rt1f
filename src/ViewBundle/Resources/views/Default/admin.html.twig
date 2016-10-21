@@ -2,18 +2,8 @@
 {% block body %}
 <h1>ADMIN</h1>
 
-<div>
-    <div>
-        <img src="images/montagne.jpg" alt="Photo de montagne" />
-        <h3>TITRE</h3>
-        <p>Auteur</p>
-        <p>Date</p>
-    </div>
-    <button type="button">Modifier</button>
-    <button type="button">Supprimer</button>
-</div>
-
 {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
+<div>
     <div>
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
         <h3>{{ article.titre }}</h3>
@@ -23,5 +13,9 @@
         <p>{{ article.date }}</p>
         <p>{{ article.auteur }}</p>
     </div>
+    <button type="button">Modifier</button>
+    <button type="button">Supprimer</button>
+</div>
+        
 {% endfor %}
 {% endblock %}

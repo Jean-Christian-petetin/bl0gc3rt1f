@@ -2,10 +2,15 @@
 {% block body %}
 <h1>HOME</h1>
 
-        <div>
-            <img src="images/montagne.jpg" alt="Photo de montagne" />
-            <h3>TITRE</h3>
-            <p>Auteur</p>
-            <p>Date</p>
-        </div>
+{% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
+<div>
+    {# On va chercher dans la colonne titre lie a l'instance correspondante #}
+    <h3>{{ article.titre }}</h3>
+    {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
+    <img src="{{ article.image }}">
+    <p>{{ article.sujet }}</p>
+    <p>{{ article.date }}</p>
+    <p>{{ article.auteur }}</p>
+</div>
+{% endfor %}
 {% endblock %}

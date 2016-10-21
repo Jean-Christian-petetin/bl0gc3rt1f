@@ -13,8 +13,13 @@ class ViewController extends Controller
      * @Template("ViewBundle:Default:home.html.twig")
      */
     public function getHome()
-    {
-        return null;
+    {   
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On va chercher en base de donnée toutes les instances de l'entité Article.
+        $article = $em->getRepository("AdminBundle:Article")->findAll();
+        //On lie chaque article dans une variable.
+        return array("varArticle" => $article);
     }
     /**
      * @Route("/admin", name="admin")
