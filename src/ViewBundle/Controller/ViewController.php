@@ -16,11 +16,12 @@ class ViewController extends Controller
     {   
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
-        //On va chercher en base de donnée toutes les instances de l'entité Article.
-        $article = $em->getRepository("AdminBundle:Article")->findAll();
+        //On va chercher en base de donnée toutes les instances de l'entité Article qui ont le booleen de la colonne publier a 1.
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
+    
     /**
      * @Route("/admin", name="admin")
      * @Template("ViewBundle:Default:admin.html.twig")
@@ -31,6 +32,34 @@ class ViewController extends Controller
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité Article.
         $article = $em->getRepository("AdminBundle:Article")->findAll();
+        //On lie chaque article dans une variable.
+        return array("varArticle" => $article);
+    }
+    
+    /**
+     * @Route("/admin/publier", name="articlePublier")
+     * @Template("ViewBundle:Default:articlePublier.html.twig")
+     */
+    public function getArticlePublier()
+    {
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On va chercher en base de donnée toutes les instances de l'entité Article.
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'));
+        //On lie chaque article dans une variable.
+        return array("varArticle" => $article);
+    }
+
+    /**
+     * @Route("/admin/nonPublier", name="articleNonPublier")
+     * @Template("ViewBundle:Default:articleNonPublier.html.twig")
+     */
+    public function getArticleNonPublier()
+    {
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On va chercher en base de donnée toutes les instances de l'entité Article.
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '0'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
