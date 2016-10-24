@@ -3,6 +3,8 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * Article
@@ -29,9 +31,10 @@ class Article
     private $titre;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="image", type="string", length=512)
+     * @File(mimeTypes={"image/jpg"})
      */
     private $image;
 

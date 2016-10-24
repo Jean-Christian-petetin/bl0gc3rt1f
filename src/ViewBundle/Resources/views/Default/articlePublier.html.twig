@@ -4,18 +4,14 @@
     {{ parent() }}
     - Administration
     {% endblock %}
+{% block body %}
     
-{% block body %}    
 <ul>
     <li><a href="{{ path('admin') }}">Tout</a></li>
     <li><a href="{{ path('articlePublier') }}">Publier</a></li>
     <li><a href="{{ path('articleNonPublier') }}">Non Publier</a></li>
 </ul>
-
-<h1>ADMIN</h1>
-
-<a href="{{ path('addArticle') }}">Ajouter</a>
-
+    
 {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
 <div>
     <div>
@@ -27,8 +23,6 @@
         <p>{{ article.date }}</p>
         <p>{{ article.auteur }}</p>
     </div>
-    <a href="{{ path('editArticle',{'id':article.id})}}">Modifier</a>
-    <a href="{{ path('deleteNews',{'id':article.id})}}">Suprimer</a>
 </div>        
 {% endfor %}
 {% endblock %}

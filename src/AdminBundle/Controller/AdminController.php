@@ -1,5 +1,4 @@
 <?php
-
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Article;
@@ -8,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
+
 
 class AdminController extends Controller
 {
@@ -64,13 +65,13 @@ class AdminController extends Controller
     }
     //cette fonction permet de modifier un article
     /**
-     * @Route("/admin/edit/article",name="editArticle")
+     * @Route("/admin/edit/article/{id}",name="editArticle")
      * @Template("AdminBundle:Default:modifArticle.html.twig")
      */
     public function editNews($id,Article $up)
     {   //on retourne un formulaire avec ses valeurs en paramètre
         //avec l'id correspondant
-        return array("formArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
+        return array("formAddArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
             
     }
     /**
@@ -146,6 +147,22 @@ class AdminController extends Controller
             $em->flush();
         }
         return $this->redirectToRoute('adminProfils');
+    }
+    
+    /**
+     * @Route("/admin/publierUnArticle/{id}", name="publierUnArticle")
+     */
+    public function publierArticle(Article $up) {
+        //On appelle l'entity manager de Doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //on met le booleen de publier a 1.
+        $up->setPublier(1);  
+        //on réecris les anciennes données par les nouvles.
+        $em->merge($up);
+        //on envoie le tout en Base de données.
+        $em->flush();
+        
+        return $this->redirectToRoute('articleNonPublier');
     }
     
 }
