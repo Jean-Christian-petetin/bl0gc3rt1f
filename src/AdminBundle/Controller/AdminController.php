@@ -124,7 +124,7 @@ class AdminController extends Controller
     }
     
     /**
-     * @Route("/admin/edit/profils",name="editProfils")
+     * @Route("/admin/edit/profils/{id}",name="editProfils")
      * @Template("AdminBundle:Default:modifProfils.html.twig")
      */
     public function editProfils($id,Profils $up)

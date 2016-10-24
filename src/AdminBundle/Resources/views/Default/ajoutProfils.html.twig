@@ -2,8 +2,11 @@
 
 {% block title %}
     {{ parent() }}
-    - ajout info profils
+    - ajout profil
 {% endblock %}
+
 {% block body %}
-<h1>AJOUT PROFILS</h1>
+<h1>AJOUT PROFIL</h1>
+    {{form_start(addProfils,{'attr':{'action':path('valid')}})}}
+    {{form_end(addProfils)}}
 {% endblock %}

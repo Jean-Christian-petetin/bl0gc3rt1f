@@ -6,5 +6,19 @@
 {% endblock %}
     
 {% block body %}
+    
 <h1>PROFILS</h1>
+
+{% for user in varUser %} {# On apple cette boucle pour chanque instance #}
+    
+<div>
+    <p>{{ user.nom }}</p>
+    <p>{{ user.prenom }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.motdepasse }}</p>
+    <p>{{ user.avatar }}</p>
+</div>
+    
+{% endfor %}
+
 {% endblock %}

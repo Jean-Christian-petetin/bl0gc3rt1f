@@ -12,10 +12,14 @@
 <div class="news">
     {# On va chercher dans la colonne titre lie a l'instance correspondante #}
     <h3 class="titre">{{ article.titre }}</h3>
+    <div class="image">
+        <img class="image" src="{{ article.image }}"><br>
+    </div>
+    <div class="annonce">
     {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
-    <img class="image" src="{{ article.image }}"><br>
     <p class="auteur">{{ article.auteur }}</p>
     <p class="date">{{ article.date }}</p>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}

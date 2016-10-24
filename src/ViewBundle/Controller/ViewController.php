@@ -41,6 +41,11 @@ class ViewController extends Controller
      */
     public function getProfils()
     {
-        return null;
+        //On appele l'entity manager de doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //On va chercher en base de donnée toutes les instances de l'entité User.
+        $user = $em->getRepository("AdminBundle:User")->findAll();
+        //On lie user dans une variable.
+        return array("varUser" => $user);
     }
 }
