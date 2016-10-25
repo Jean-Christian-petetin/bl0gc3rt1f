@@ -2,9 +2,25 @@
 
 {% block title %}
     {{ parent() }}
-    - Profils
-{% endblock %}
-    
+    - Administration
+    {% endblock %}
 {% block body %}
-<h1>PROFILS</h1>
+<h1>ADMIN</h1>
+
+
+{% for user in varUser %} {# On apple cette boucle pour chanque instance #}
+<div>
+    <div>
+        <img src="{{asset('images/')~user.avatar }}">
+        <p>{{ user.nom }}</p>
+        <p>{{ user.prenom }}</p>
+        <p>{{ user.email }}</p>
+        <p>{{ user.motdepasse }}</p>
+    </div>
+    <a href="{{ path('editProfils',{'id':user.id})}}">Edit</a>
+    <a href="{{ path('deleteProfils',{'id':user.id})}}">Supprimer</a>
+
+</div>
+        
+{% endfor %}
 {% endblock %}

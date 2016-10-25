@@ -4,7 +4,9 @@ namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Serializable;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * User
@@ -52,9 +54,10 @@ class User implements UserInterface, Serializable
     private $motdepasse;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="avatar", type="string", length=512)
+     * @File(mimeTypes={"image/jpg"})
      */
     private $avatar;
 
