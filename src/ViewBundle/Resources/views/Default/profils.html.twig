@@ -11,12 +11,12 @@
 
 {% for user in varUser %} {# On apple cette boucle pour chanque instance #}
     
-<div>
-    <p>{{ user.nom }}</p>
-    <p>{{ user.prenom }}</p>
-    <p>{{ user.email }}</p>
-    <p>{{ user.motdepasse }}</p>
-    <p>{{ user.avatar }}</p>
+<div class="profil">
+    <p>Nom : {{ user.nom }}</p>
+    <p>Prénom : {{ user.prenom }}</p>
+    <p>Email : {{ user.email }}</p>
+    <p>Mot de passe : {{ user.motdepasse }}</p>
+    <p>Avatar : {{ user.avatar }}</p>
 </div>
     
 {% endfor %}

@@ -1,6 +1,6 @@
 .news {
     width: 90%;
-    height: 300px;
+    height: 400px;
     margin: auto;
     margin-bottom: 20px;
     background-color: $detail2;
@@ -17,10 +17,12 @@
     margin: 0;
     padding: 1em;
     background-color: $detail1;
+    font-size: 3em;
 }
 
 .annonce, .image{
     display: inline-block; 
+    font-size: 2em;
 }
 .auteur {
 
