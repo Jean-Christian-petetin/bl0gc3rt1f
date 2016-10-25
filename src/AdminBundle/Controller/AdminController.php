@@ -2,7 +2,9 @@
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Article;
+use AdminBundle\Entity\User;
 use AdminBundle\Form\ArticleType;
+use AdminBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -37,7 +39,9 @@ class AdminController extends Controller
         $f = $this->createForm(ArticleType::class, $addNews);
         //On lie les champs de la vue et le formulaire.
         $f->handleRequest($request);
-        
+        $nomDuFichier = md5(uniqid()).'.'.$addNews->getImage()->getClientOriginalExtension();
+         $addNews->getImage()->move('../web/images',$nomDuFichier);
+         $addNews->setImage($nomDuFichier);
         //On appele l'entity manager
         $em = $this->getDoctrine()->getManager();
         //On enregistre en mémoire le formulaire avec les champs remplis.
@@ -68,10 +72,10 @@ class AdminController extends Controller
      * @Route("/admin/edit/article/{id}",name="editArticle")
      * @Template("AdminBundle:Default:modifArticle.html.twig")
      */
-    public function editNews($id,Article $up)
+    public function editNews(Article $up)
     {   //on retourne un formulaire avec ses valeurs en paramètre
         //avec l'id correspondant
-        return array("formAddArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$id);
+        return array("formAddArticle" => $this->createForm(ArticleType::class,$up)->createView(),'id'=>$up->getId());
             
     }
     /**
@@ -95,22 +99,37 @@ class AdminController extends Controller
         return $this->redirectToRoute('admin');
     }
     
-    
-    //les fonctions pour le profil sont identique a ceux utiliser pour les articles
     /**
-     * @Route("/admin/add/profils",name="addProfils")
+     * @Route("/admin/formAddProfils", name="addProfils")
      * @Template("AdminBundle:Default:ajoutProfils.html.twig")
+     */
+    public function getformAddProfils()
+    {
+        //On crée un formulaire a l'appel de la vue et on instancie un nouvel objet Article.
+        $f = $this->createForm(UserType::class, new User());
+        //On crée la vue avec le formulaire précédement crée.
+        return array("formAddProfils" => $f->createView());
+    }
+    
+    
+    
+    /**
+     * @Route("/admin/add/profils", name="validPro")
      */
     public function addProfils(Request $request)
     {   
-        $addPro = new Article();
-        $f = $this->createForm(ArticleType::class, $addPro);
+        $addPro = new User();
+        $f = $this->createForm(UserType::class, $addPro);
         $f->handleRequest($request);
+         $nomDuFichier = md5(uniqid()).'.'.$addPro->getAvatar()->getClientOriginalExtension();
+         $addPro->getAvatar()->move('../web/images',$nomDuFichier);
+         $addPro->setAvatar($nomDuFichier);
         $em = $this->getDoctrine()->getManager();
         $em->persist($addPro);
         $em->flush();
-        return null;
+        return $this->redirectToRoute('adminProfils');
     }
+    
     
     /**
      * @Route("/admin/delete/profils/{id}",name="deleteProfils") 
@@ -118,7 +137,7 @@ class AdminController extends Controller
     public function deleteProfils($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $getId = $em->find("AdminBundle:Profils", $id);
+        $getId = $em->find("AdminBundle:User", $id);
         $em->remove($getId);
         $em->flush();
         return $this->redirectToRoute('adminProfils');
@@ -128,18 +147,18 @@ class AdminController extends Controller
      * @Route("/admin/edit/profils/{id}",name="editProfils")
      * @Template("AdminBundle:Default:modifProfils.html.twig")
      */
-    public function editProfils($id,Profils $up)
+    public function editProfils($id,User $up)
     {
-        return array("formProfils" => $this->createForm(ProfilsType::class,$up)->createView(),'id'=>$id);
+        return array("formAddProfils" => $this->createForm(UserType::class,$up)->createView(),'id'=>$id);
     }
     
     /**
      * @Route("/admin/update/profils/{id}",name="validProfils")
      */
-    public function updateProfils(Request $request , Profils $up)
+    public function updateProfils(Request $request , $up)
     {
         $em = $this->getDoctrine()->getManager();
-        $f=$this->createForm(ArticleType::class,$up);
+        $f=$this->createForm(UserType::class,$up);
         $f->handleRequest($request);
         if($f->isValid())
         {   

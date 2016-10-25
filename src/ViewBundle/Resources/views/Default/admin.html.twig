@@ -22,7 +22,7 @@
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
         <h3>{{ article.titre }}</h3>
         {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
-        <img src="{{ article.image }}">
+        <img src="{{asset('images/')~article.image }}">
         <p>{{ article.sujet }}</p>
         <p>{{ article.date }}</p>
         <p>{{ article.auteur }}</p>

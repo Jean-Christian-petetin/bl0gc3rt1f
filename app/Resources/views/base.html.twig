@@ -13,17 +13,21 @@
         <nav>
             <ul>
                 <li><a href="{{ path('home')}}">News</a></li>
-                <li><a href="{{ path('admin')}}">Admin</a></li>
-                <li><a href="{{ path('adminProfils')}}">Profils</a></li>
-                <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('admin')}}">Admin</a></li>
+                    <li><a href="{{ path('adminProfils')}}">Profils</a></li>
+                {% endif %}
+                
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
+                {% else %}
+                    <form action="{{ path('loginCheck')}}" method="post">
+                        <input type="text" id="email" name="_username" placeholder="Email" value=""/>
+                        <input type="password" id="motdepasse" name="_password" placeholder="mot de passe" value=""/>
+                        <input type="submit" value="Login"/>
+                    </form>
+                {% endif %}
             </ul>
-            <div>    
-                <form action="{{ path('loginCheck')}}" method="post">
-                    <input type="text" id="email" name="_username" placeholder="Email" value=""/>
-                    <input type="password" id="motdepasse" name="_password" placeholder="mot de passe" value=""/>
-                    <input class="login" type="submit" value="Login"/>
-                </form>
-            </div>
         </nav>
        
         {% block body %}
