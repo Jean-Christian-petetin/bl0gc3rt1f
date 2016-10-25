@@ -168,4 +168,20 @@ class AdminController extends Controller
         return $this->redirectToRoute('adminProfils');
     }
     
+    /**
+     * @Route("/admin/publierUnArticle/{id}", name="publierUnArticle")
+     */
+    public function publierArticle(Article $up) {
+        //On appelle l'entity manager de Doctrine.
+        $em = $this->getDoctrine()->getManager();
+        //on met le booleen de publier a 1.
+        $up->setPublier(1);  
+        //on réecris les anciennes données par les nouvles.
+        $em->merge($up);
+        //on envoie le tout en Base de données.
+        $em->flush();
+        
+        return $this->redirectToRoute('articleNonPublier');
+    }
+    
 }

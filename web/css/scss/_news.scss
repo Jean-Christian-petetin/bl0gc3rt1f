@@ -1,18 +1,27 @@
 .news {
-    border: 3px solid $detail1;
     width: 90%;
+    height: 300px;
     margin: auto;
-}
+    margin-bottom: 20px;
+    background-color: $detail2;
+ }
 
 .image {
     float: left;
-    width: 90%;
+    width: 30%;
+    height: 30%;
 }
 
 .titre {
     text-align: center;
+    margin: 0;
+    padding: 1em;
+    background-color: $detail1;
 }
 
+.annonce, .image{
+    display: inline-block; 
+}
 .auteur {
 
 }
