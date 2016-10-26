@@ -31,7 +31,7 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité Article.
-        $article = $em->getRepository("AdminBundle:Article")->findAll();
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array(), array('id'=>'desc'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
