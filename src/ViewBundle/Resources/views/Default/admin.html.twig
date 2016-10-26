@@ -6,10 +6,10 @@
     {% endblock %}
     
 {% block body %}    
-<ul>
-    <li><a href="{{ path('admin') }}">Tout</a></li>
-    <li><a href="{{ path('articlePublier') }}">Publier</a></li>
-    <li><a href="{{ path('articleNonPublier') }}">Non Publier</a></li>
+<ul class="sousmenu">
+    <li><a class="admin" href="{{ path('admin') }}">Tout</a></li>
+    <li><a class ="publier" href="{{ path('articlePublier') }}">Publier</a></li>
+    <li><a class="Npublier" href="{{ path('articleNonPublier') }}">Non Publier</a></li>
 </ul>
 
 <h1>ADMIN</h1>

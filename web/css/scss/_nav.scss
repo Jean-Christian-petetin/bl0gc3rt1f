@@ -1,6 +1,16 @@
+.sousmenu {
+    list-style-type: none;
+    display: inline-block;
+    
+    li {
+        
+    }
+}
+
 nav {
    margin: 0;
    padding: 0;
+   width: 400px;
    font-size: 4em;
    
 
@@ -13,9 +23,13 @@ nav {
         overflow: hidden;
         background-color: $detail2;
     }
-    
+     
     li {
         float: left;
+    }
+    
+    li:last-child {
+        float: right;
     }
     
         a {
