@@ -8,19 +8,36 @@
 {% block body %}
 <h1>HOME</h1>
 
-{% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
-<div class="news">
-    {# On va chercher dans la colonne titre lie a l'instance correspondante #}
-    <h3 class="titre">{{ article.titre }}</h3>
-    <div class="image">
-        <img class="image" src="{{ article.image }}"><br>
-    </div>
-    <div class="annonce">
-    {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
-    <img src="{{asset('images/')~article.image }}">
-    <p class="auteur">{{ article.auteur }}</p>
-    <p class="date">{{ article.date }}</p>
-    </div>
+<div class="displayPC">
+    {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
+        <div class="news">
+            {# On va chercher dans la colonne titre lie a l'instance correspondante #}
+            <h3 class="titre">{{ article.titre }}</h3>
+            <div class="image">
+                <img class="image" src="{{ article.image }}"><br>
+            </div>
+            <div class="annonce">
+            {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
+            <img src="{{asset('images/')~article.image }}">
+            <p>{{ article.sujet }}</p>
+            <p class="auteur">{{ article.auteur }}</p>
+            <p class="date">{{ article.date }}</p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
-{% endfor %}
+
+{#<div class="displayPhone">
+    {% for article in varArticle %} {# On apple cette boucle pour chanque instance 
+        <div class="news">
+            {# On va chercher dans la colonne titre lie a l'instance correspondante #}
+            {#<h3 class="titre">{{ article.titre }}</h3>
+            <div class="annonce">#}
+            {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
+            {#<p class="auteur">{{ article.auteur }}</p>
+            <p class="date">{{ article.date }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>#}
 {% endblock %}
