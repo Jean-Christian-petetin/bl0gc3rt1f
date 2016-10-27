@@ -2,7 +2,9 @@
 
 namespace AdminBundle\Form;
 
+
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,7 +23,7 @@ class ArticleType extends AbstractType
             ->add('titre')
             ->add('image',FileType::class,array('data_class'=> null))
             ->add('sujet')
-            ->add('date')
+            ->add('date',DateType::class)
             ->add('auteur')
             ->add('sujet' ,TextareaType::class)
             ->add('publier')

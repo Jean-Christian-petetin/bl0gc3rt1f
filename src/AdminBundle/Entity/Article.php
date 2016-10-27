@@ -46,9 +46,9 @@ class Article
     private $sujet;
 
     /**
-     * @var string
+     * @var DateTime
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="date", type="date")
      */
     private $date;
 
@@ -152,7 +152,7 @@ class Article
     /**
      * Set date
      *
-     * @param string $date
+     * @param date $date
      *
      * @return Article
      */
@@ -166,7 +166,7 @@ class Article
     /**
      * Get date
      *
-     * @return string
+     * @return date
      */
     public function getDate()
     {

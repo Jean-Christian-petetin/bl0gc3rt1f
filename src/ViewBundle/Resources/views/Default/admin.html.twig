@@ -24,7 +24,7 @@
         {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
         <img src="{{asset('images/')~article.image }}">
         <p>{{ article.sujet }}</p>
-        <p>{{ article.date }}</p>
+        <p>{{ article.date|date('d/m/y')}}</p>
         <p>{{ article.auteur }}</p>
     </div>
     <a href="{{ path('editArticle',{'id':article.id})}}">Modifier</a>
