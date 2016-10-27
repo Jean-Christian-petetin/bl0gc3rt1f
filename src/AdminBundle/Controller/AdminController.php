@@ -53,7 +53,7 @@ class AdminController extends Controller {
      * @Route("/admin/delete/article/{id}",name="deleteNews")
      */
     public function deleteNews($id) {   //on recupere l'entity manager
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         //on recupere l'id de l'article 
         $getId = $em->find("AdminBundle:Article", $id);
         //on supprime l'article choisi
@@ -72,7 +72,7 @@ class AdminController extends Controller {
     public function editNews($id) {   
         //on retourne un formulaire avec ses valeurs en paramètre
         //avec l'id correspondant
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $up = $em->find('AdminBundle:Article', $id);
         $f = $this->createForm(ArticleType::class, $up);
         return array("formAddArticle" => $f->createView(), "id" => $id);
@@ -82,7 +82,7 @@ class AdminController extends Controller {
      * @Route("/admin/update/article/{id}",name="validNews")
      */
     public function updateNews(Request $request, $id) {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $f = $em->find('AdminBundle:Article', $id);
         $b = $this->createForm(ArticleType::class, $f);
         if ($request->getMethod() == 'POST') {
@@ -90,7 +90,7 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()) . '.' . $f->getImage()->getClientOriginalExtension();
             $f->getImage()->move('../web/images', $nomDuFichier);
             $f->setImage($nomDuFichier);
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->merge($f);
             $em->flush();
             return $this->redirect($this->generateUrl('admin'));
@@ -128,7 +128,7 @@ class AdminController extends Controller {
      * @Route("/admin/delete/profils/{id}",name="deleteProfils") 
      */
     public function deleteProfils($id) {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $getId = $em->find("AdminBundle:User", $id);
         $em->remove($getId);
         $em->flush();
@@ -142,7 +142,7 @@ class AdminController extends Controller {
     public function editProfils($id) {   
         //on retourne un formulaire avec ses valeurs en paramètre
         //avec l'id correspondant
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $up = $em->find('AdminBundle:User', $id);
         $f = $this->createForm(UserType::class, $up);
         return array("formAddProfils" => $f->createView(), "id" => $id);
@@ -152,7 +152,7 @@ class AdminController extends Controller {
      * @Route("/admin/update/profils/{id}",name="validProfils")
      */
     public function updateProfils(Request $request, $id) {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $f = $em->find('AdminBundle:User', $id);
         $b = $this->createForm(UserType::class, $f);
         if ($request->getMethod() == 'POST') {
@@ -160,7 +160,7 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()) . '.' . $f->getAvatar()->getClientOriginalExtension();
             $f->getAvatar()->move('../web/images', $nomDuFichier);
             $f->setAvatar($nomDuFichier);
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->merge($f);
             $em->flush();
             return $this->redirect($this->generateUrl('adminProfils'));
@@ -179,18 +179,19 @@ class AdminController extends Controller {
     /**
      * @Route("/addUser", name="inscription")
      */
-    public function functionName(Request $request) {
+    public function addUser(Request $request) {
         $addUser = new User();
         
         $f = $this->createForm(UserType::class, $addUser);
         $f->handleRequest($request);
-        $nomDuFichier = md5(uniqid()).'.'.$addUser->getImage()->getClientOriginalExtension();
-            $addUser->getImage()->move('../web/images',$nomDuFichier);
-            $addUser->setImage($nomDuFichier);
+        $nomDuFichier = md5(uniqid()).'.'.$addUser->getAvatar()->getClientOriginalExtension();
+            $addUser->getAvatar()->move('../web/images',$nomDuFichier);
+            $addUser->setAvatar($nomDuFichier);
+        $addUser->setRole(array("ROLE_USER"));
             
         $em = $this->getDoctrine()->getManager();
         $em->persist($addUser);
-        $em->fush();
+        $em->flush();
         
         return $this->redirectToRoute('home');
     }
