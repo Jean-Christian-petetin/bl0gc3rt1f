@@ -128,10 +128,10 @@ div.modif {
     border-radius: 5px;
     text-decoration: none; }
 
-.profil {
+.profil, .inscription {
   text-align: center;
   display: inline; }
-  .profil .imgprofil {
+  .profil .imgprofil, .inscription .imgprofil {
     width: 20%;
     border: solid #519d9e 3px; }
 
