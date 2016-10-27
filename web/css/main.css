@@ -25,6 +25,10 @@ h1 {
       padding: 14px 16px;
       text-decoration: none; }
 
+.banniere {
+  width: 100%;
+  margin-bottom: 0; }
+
 nav {
   margin: 0;
   padding: 0;
@@ -83,14 +87,14 @@ nav {
   margin-bottom: 0; }
 
 .article {
-  text-align: justify;
   margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px; }
 
 .annonce, .image {
   display: inline-block;
-  font-size: 1em; }
+  font-size: 1em;
+  text-align: justify; }
 
 div.annonce img {
   float: left;

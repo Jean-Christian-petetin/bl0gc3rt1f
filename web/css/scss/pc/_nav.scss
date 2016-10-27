@@ -6,7 +6,7 @@
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    background-color: #b1cccd;
+    background-color: $detail2;
     
     li {
         display: inline-block; 
@@ -19,6 +19,11 @@
             text-decoration: none;
         }
     }
+}
+
+.banniere {
+    width: 100%;
+    margin-bottom: 0;
 }
 
 nav {
