@@ -22,7 +22,7 @@
                     <li><a href="{{ path('adminProfils')}}">Profils</a></li>
                 {% endif %}
                 
-                {% if is_granted('ROLE_USER') %}
+                {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN')%}
                     <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
                 {% else %}
                     <form action="{{ path('loginCheck')}}" method="post">
