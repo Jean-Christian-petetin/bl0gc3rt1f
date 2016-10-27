@@ -4,19 +4,42 @@ body {
   background-color: #f7fbfa; }
 
 h1 {
-  text-align: center; }
+  text-align: center;
+  font-size: 3em; }
+
+.sousmenu {
+  list-style-type: none;
+  padding: 0px;
+  height: 30%;
+  font-size: 1em;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #b1cccd; }
+  .sousmenu li {
+    display: inline-block; }
+    .sousmenu li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none; }
 
 nav {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 30%;
+  font-size: 1em; }
   nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #cbdddd; }
+    background-color: #cbddde; }
   nav li {
     float: left; }
+  nav li:last-child {
+    float: right; }
   nav a {
     display: block;
     color: black;
@@ -26,36 +49,99 @@ nav {
   nav .active {
     background-color: #519d9e; }
   nav form {
-    float: right;
-    margin-top: 1%;
-    margin-right: 5px; }
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    padding-bottom: 10px;
+    background-color: #cbddde;
+    font-size: 1em;
+    padding-top: 2%; }
+  nav #email, nav #motdepasse {
+    width: 100px;
+    height: 20px;
+    font-size: 1em; }
+  nav .login {
+    width: 200px;
+    height: 100px; }
 
 .news {
   width: 90%;
-  height: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  background-color: #cbdddd; }
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; }
 
-.image {
-  float: left;
-  width: 30%;
-  height: 30%; }
+.soustitre {
+  display: flex; }
+  .soustitre .auteur {
+    margin-right: 20px; }
 
 .titre {
   text-align: center;
-  margin: 0;
   padding: 1em;
-  background-color: #519d9e; }
+  background-color: #519d9e;
+  font-size: 1.50em;
+  margin-bottom: 0; }
+
+.article {
+  text-align: justify;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px; }
 
 .annonce, .image {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1em; }
 
-div div {
-  background-color: #cbdddd; }
-  div div h3 {
-    background-color: #519d9e;
-    margin: 0;
-    padding: 1em; }
+div.annonce img {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px; }
+
+a:visited, a:link, a:active, a:hover {
+  color: black; }
+
+a.ajouter {
+  text-decoration: none;
+  padding: 5px;
+  margin-left: 70px;
+  text-align: center;
+  color: black;
+  border: solid 1px #519d9e;
+  border-radius: 5px;
+  margin-bottom: 15px; }
+
+div.modif {
+  margin-bottom: 10px;
+  display: flex;
+  width: 90%; }
+  div.modif a {
+    margin-left: 5px;
+    margin-right: 10px;
+    text-decoration: none; }
+  div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
+    color: black;
+    border: solid 1px #519d9e;
+    border-radius: 5px;
+    text-decoration: none; }
+
+.profil {
+  text-align: center;
+  display: inline; }
+  .profil .imgprofil {
+    width: 20%;
+    border: solid #519d9e 3px; }
+
+.modifprofil {
+  text-align: center; }
+  .modifprofil .editprofil {
+    color: black;
+    border: solid 1px #519d9e;
+    border-radius: 5px;
+    text-decoration: none; }
+  .modifprofil .deleteprofil {
+    color: black;
+    border: solid 1px #519d9e;
+    border-radius: 5px;
+    text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */
