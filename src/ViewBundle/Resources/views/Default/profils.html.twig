@@ -10,16 +10,18 @@
 
 {% for user in varUser %} {# On appelle cette boucle pour chaque instance #}
 <div>
-    <div>
-        <img src="{{asset('images/')~user.avatar }}">
-        <p>Nom : {{ user.nom }}</p>
+    <div class="profil">
+        <div><img class="imgprofil" src="{{asset('images/')~user.avatar }}"></div>
+        <div><p>Nom : {{ user.nom }}</p>
         <p>Prénom : {{ user.prenom }}</p>
         <p>Email : {{ user.email }}</p>
         <p>Mot de passe : {{ user.motdepasse }}</p>
+        </div>
     </div>
-    <a href="{{ path('editProfils',{'id':user.id})}}">Modifier</a>
-    <a href="{{ path('deleteProfils',{'id':user.id})}}">Supprimer</a>
-
+    <div class="modifprofil">
+    <a class="editprofil" href="{{ path('editProfils',{'id':user.id})}}">Modifier</a>
+    <a class="deleteprofil" href="{{ path('deleteProfils',{'id':user.id})}}">Supprimer</a>
+    </div>
 </div>
         
 {% endfor %}

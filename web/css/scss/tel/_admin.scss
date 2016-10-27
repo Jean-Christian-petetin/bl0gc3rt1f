@@ -1,0 +1,40 @@
+h3{
+    background-color: $detail1;
+    margin: 0;
+    padding: 1em;
+    margin-top: 10px;
+}
+
+a:visited, a:link, a:active, a:hover {
+    color: black;
+}
+
+a.ajouter {
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+}
+  
+div.modif {
+    margin-bottom: 10px;
+    display: flex;
+    
+    a{
+        margin-left: 5px;
+        margin-right: 10px; 
+        ext-decoration: none;
+    }
+    
+    a:visited, a:link, a:active, a:hover {
+        color: black;
+        border: solid 1px $detail1;
+        border-radius:5px;
+        text-decoration: none;
+    }
+}
+
+.aauteur, .adate {  
+    display: inline;
+}
+
+
