@@ -13,6 +13,7 @@
 
         <nav>
             <ul>
+                <li><a href="{{ path('inscriptionUser')}}">Sign in</a></li>
                 <li><a href="{{ path('home')}}">News</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="{{ path('admin')}}">Admin</a></li>

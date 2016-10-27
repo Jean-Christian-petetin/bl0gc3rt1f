@@ -105,7 +105,7 @@ class AdminController extends Controller {
         //On crée un formulaire a l'appel de la vue et on instancie un nouvel objet Article.
         $f = $this->createForm(UserType::class, new User());
         //On crée la vue avec le formulaire précédement crée.
-        return array("formAddProfils" => $f->createView());
+        return array("formAddProfils" => $f->createView());       
     }
 
     /**
@@ -167,6 +167,34 @@ class AdminController extends Controller {
         }
     }
 
+    /**
+     * @Route("/inscription", name="inscriptionUser")
+     * @Template("ViewBundle:Default:inscription.html.twig")
+     */
+    public function getNewUser() {
+        $f = $this->createForm(UserType::class, new User());
+        return array("formAddUser" => $f->createView());
+    }
+    
+    /**
+     * @Route("/addUser", name="inscription")
+     */
+    public function functionName(Request $request) {
+        $addUser = new User();
+        
+        $f = $this->createForm(UserType::class, $addUser);
+        $f->handleRequest($request);
+        $nomDuFichier = md5(uniqid()).'.'.$addUser->getImage()->getClientOriginalExtension();
+            $addUser->getImage()->move('../web/images',$nomDuFichier);
+            $addUser->setImage($nomDuFichier);
+            
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($addUser);
+        $em->fush();
+        
+        return $this->redirectToRoute('home');
+    }
+    
     /**
      * @Route("/admin/publierUnArticle/{id}", name="publierUnArticle")
      */

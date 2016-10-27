@@ -21,5 +21,18 @@
     <img src="{{asset('images/')~article.image }}">
     </div>
 </div>
-{% endfor %}
+
+{#<div class="displayPhone">
+    {% for article in varArticle %} {# On apple cette boucle pour chanque instance 
+        <div class="news">
+            {# On va chercher dans la colonne titre lie a l'instance correspondante #}
+            {#<h3 class="titre">{{ article.titre }}</h3>
+            <div class="annonce">#}
+            {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
+            {#<p class="auteur">{{ article.auteur }}</p>
+            <p class="date">{{ article.date }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>#}
 {% endblock %}
