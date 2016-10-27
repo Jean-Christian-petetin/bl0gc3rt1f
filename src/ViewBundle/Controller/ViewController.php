@@ -2,6 +2,7 @@
 
 namespace ViewBundle\Controller;
 
+use AdminBundle\Entity\Article;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -76,5 +77,13 @@ class ViewController extends Controller
         $user = $em->getRepository("AdminBundle:User")->findAll();
         //On lie user dans une variable.
         return array("varUser" => $user);
+    }
+    
+    /**
+     * @Route("/versionPhone/{id}", name="versionTel")
+     * @Template("ViewBundle:Default:articlePhone.html.twig")
+     */
+    public function articleVersionPhone(Article $article) {
+        return array("article" => $article);
     }
 }
