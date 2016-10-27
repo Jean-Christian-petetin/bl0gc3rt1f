@@ -17,7 +17,7 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité Article qui ont le booleen de la colonne publier a 1.
-        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'));
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'), array('id'=>'desc'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
@@ -45,7 +45,7 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité Article.
-        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'));
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'), array('id'=>'desc'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
@@ -59,13 +59,13 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité Article.
-        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '0'));
+        $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '0'), array('id'=>'desc'));
         //On lie chaque article dans une variable.
         return array("varArticle" => $article);
     }
     
     /**
-     * @Route("/admin/profils",name="adminProfils")
+     * @Route("/user/profils",name="adminProfils")
      * @Template("ViewBundle:Default:profils.html.twig")
      */
     public function getProfils()

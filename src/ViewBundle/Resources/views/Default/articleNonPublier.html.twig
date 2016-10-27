@@ -6,24 +6,28 @@
     {% endblock %}
 {% block body %}
     
-<ul>
-    <li><a href="{{ path('admin') }}">Tout</a></li>
-    <li><a href="{{ path('articlePublier') }}">Publier</a></li>
-    <li><a href="{{ path('articleNonPublier') }}">Non Publier</a></li>
+<ul class="sousmenu">
+    <li><a class="admin" href="{{ path('admin') }}">Tout</a></li>
+    <li><a class ="publier" href="{{ path('articlePublier') }}">Publier</a></li>
+    <li><a class="Npublier" href="{{ path('articleNonPublier') }}">Non Publier</a></li>
 </ul>
+
+<h1>Non Publier</h1>
     
 {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
 <div>
-    <div>
+    <div class="news">
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
-        <h3>{{ article.titre }}</h3>
+        <h3 class="titre">{{ article.titre }}</h3>
+        <div class="soustitre">
+        <p class="auteur">{{ article.auteur }}</p>
+        <p class="date">{{ article.date }}</p>
+        </div>
+    <div class="annonce"><p>{{ article.sujet }}</p>
         {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
-        <img src="{{ article.image }}">
-        <p>{{ article.sujet }}</p>
-        <p>{{ article.date }}</p>
-        <p>{{ article.auteur }}</p>
+        <img src="{{asset('images/')~article.image }}">
     </div>
-    <a href="{{ path('publierUnArticle', {'id':article.id}) }}">Publier</a>
+        <div class="modif"><a href="{{ path('publierUnArticle', {'id':article.id}) }}">Publier</a></div>
 </div>        
 {% endfor %}
 {% endblock %}

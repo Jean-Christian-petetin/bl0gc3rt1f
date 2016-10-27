@@ -1,0 +1,40 @@
+.news {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+ }
+ .soustitre {
+     display: flex;
+     
+     .auteur{
+         margin-right: 20px;
+     }
+ }
+
+.titre {
+    text-align: center;
+    padding: 1em;
+    background-color: $detail1;
+    font-size: 1.50em;
+    margin-bottom: 0;
+}
+
+.article {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.annonce, .image{
+    display: inline-block; 
+    font-size: 1em;
+    text-align: justify;
+}
+
+div.annonce img {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+

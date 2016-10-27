@@ -2,6 +2,9 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+    
     providers:
         gestion:
             entity:
@@ -29,12 +32,13 @@ security:
             form_login:
                 login_path: home
                 check_path: loginCheck
-                default_target_path: /admin
+                default_target_path: /
             logout:
                 path: logOut
                 target: /
                 
     access_control:
+        - { path: ^/user , roles: ROLE_USER }
         - { path: ^/admin , roles: ROLE_ADMIN }
             # activate different ways to authenticate
 

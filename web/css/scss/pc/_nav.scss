@@ -1,0 +1,85 @@
+.sousmenu {
+    list-style-type: none;
+    padding: 0px;
+    height: 30%;
+    font-size: 1em;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: $detail2;
+    
+    li {
+        display: inline-block; 
+        
+        a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    }
+}
+
+.banniere {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+nav {
+   margin: 0;
+   padding: 0;
+   height: 30%;
+   font-size: 1em;
+
+   
+   ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: $detail2;
+    }
+     
+    li {
+        float: left;
+    }
+    
+    li:last-child {
+        float: right;
+    }
+    
+        a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        .active {
+            background-color: $detail1;
+        }
+        
+    form{
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        padding-bottom: 10px;
+        background-color: $detail2;
+        font-size: 1em;
+        padding-top: 2%;
+        }
+        
+        #email, #motdepasse {
+            width: 100px;
+            height: 20px;
+            font-size: 1em;
+        }
+        
+        .login {
+            width: 200px;
+            height: 100px;
+        }
+   
+    }

@@ -9,8 +9,14 @@
 
 {% block body %}
 <h1>MODIF PROFILS</h1>
+    
 <div>
-    {{form_start(formAddProfils,{'attr':{'action':path('validProfils',{'id':id})}})}}
-    {{form_end(formAddProfils)}}
+    {{ form_start(formAddProfils,{'attr':{'action':path('validProfils',{'id':id})}})}}
+        {{ form_row(formAddProfils.nom) }}
+        {{ form_row(formAddProfils.prenom) }}
+        {{ form_row(formAddProfils.email) }}
+        {{ form_row(formAddProfils.motdepasse) }}
+        {{ form_row(formAddProfils.avatar) }}
+        <input type="submit" value="Valider" />
 </div>
 {% endblock %}
