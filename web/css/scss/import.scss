@@ -1,3 +1,11 @@
 @import "variables";
 @import "general";
-@import "pc/importPc";
+@media (max-width:480px){
+    @import "tel/importTel";
+}
+@media (min-width: 481px) and (max-width: 1023px){
+    @import "tablet/importTablet";
+}
+@media (min-width: 1024px){
+    @import "pc/importPc";
+}

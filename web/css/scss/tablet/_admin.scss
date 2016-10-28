@@ -1,0 +1,33 @@
+a:visited, a:link, a:active, a:hover {
+    color: black;
+}
+
+a.ajouter {
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 70px;;
+    text-align: center;
+    color: black;
+    border: solid 1px $detail1;
+    border-radius:5px;
+    margin-bottom: 15px;
+}
+  
+div.modif {
+    margin-bottom: 10px;
+    display: flex;
+    width: 90%;
+    
+    a{
+        margin-left: 5px;
+        margin-right: 10px; 
+        text-decoration: none;
+    }
+    
+    a:visited, a:link, a:active, a:hover {
+        color: black;
+        border: solid 1px $detail1;
+        border-radius:5px;
+        text-decoration: none;
+    }
+}
