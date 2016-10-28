@@ -57,7 +57,7 @@ class User implements UserInterface, Serializable
      * @var UploadedFile
      *
      * @ORM\Column(name="avatar", type="string", length=512)
-     * @File(mimeTypes={"image/jpg"})
+     * @File(mimeTypes={"image"})
      */
     private $avatar;
 
