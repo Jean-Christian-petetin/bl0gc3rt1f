@@ -25,11 +25,12 @@
                 {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN')%}
                     <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
                 {% else %}
-                    <form action="{{ path('loginCheck')}}" method="post">
+                <li><a href="{{ path('loGin') }}">login</a></li>
+                    {#<form action="{{ path('loginCheck')}}" method="post">
                         <input type="text" id="email" name="_username" placeholder="Email" value=""/>
                         <input type="password" id="motdepasse" name="_password" placeholder="mot de passe" value=""/>
                         <input type="submit" value="Login"/>
-                    </form>
+                    </form>#}
                 {% endif %}
             </ul>
         </nav>

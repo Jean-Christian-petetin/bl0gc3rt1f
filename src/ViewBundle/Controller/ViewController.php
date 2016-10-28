@@ -24,6 +24,14 @@ class ViewController extends Controller
     }
     
     /**
+     * @Route("/login", name="loGin")
+     * @Template("AdminBundle:Default:login.html.twig")
+     */
+    public function getLogin() {
+        return null;
+    }
+    
+    /**
      * @Route("/admin", name="admin")
      * @Template("ViewBundle:Default:admin.html.twig")
      */
