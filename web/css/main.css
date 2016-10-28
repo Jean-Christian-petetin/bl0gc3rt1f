@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -95,6 +96,9 @@ h1 {
     display: none; }
 
   .displayPc {
+    display: none; }
+
+  .displayTablet {
     display: none; }
 
   .displayPhone {
@@ -227,7 +231,46 @@ h1 {
     width: 100%;
     margin-bottom: 20px; }
 
+  .contenant {
+    margin: auto;
+    margin-bottom: 2em;
+    width: 90%;
+    border-bottom: 2px solid #519d9e; }
+    .contenant button.toggle {
+      background-color: #cbddde;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.8s; }
+    .contenant button.toggle.active {
+      background-color: #cbddde; }
+    .contenant button.toggle h3 {
+      margin: 0; }
+    .contenant button.toggle h3:after {
+      content: '\02795';
+      /* caractere unicode pour le signe + */
+      font-size: 12px;
+      color: #519d9e;
+      float: right; }
+    .contenant button.toggle.active h3:after {
+      content: "➖"; }
+    .contenant .contenu {
+      padding: 0 0.3em;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.8s ease-in-out;
+      opacity: 0; }
+    .contenant .contenu.show {
+      opacity: 1;
+      max-height: 500px; }
+
   .displayPc {
+    display: none; }
+
+  displayTablet {
     display: block; }
 
   .displayPhone {
@@ -376,6 +419,9 @@ h1 {
 
   .displayPc {
     display: block; }
+
+  .displayTablet {
+    display: none; }
 
   .displayPhone {
     display: none; }
