@@ -90,7 +90,7 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité User.
-        $user = $em->getRepository("AdminBundle:User")->findBy();
+        $user = $em->getRepository("AdminBundle:User")->findAll();
         //On lie user dans une variable.
         return array("varUser" => $user);
     }

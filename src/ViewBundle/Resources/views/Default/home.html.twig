@@ -12,10 +12,9 @@
 {% block body %}
 <h1>SerialSeriz</h1>
 
- {# On apple cette boucle pour chanque instance #}
-<div class="displayPc news">
-    
+ {# On apple cette boucle pour chanque instance #}    
     {% for article in varArticle %}
+    <div class="displayPc news">    
     {# On va chercher dans la colonne titre lie a l'instance correspondante #}
     <h3 class="titre">{{ article.titre }}</h3>
     <div class="soustitre">
@@ -53,7 +52,6 @@
 {#        <img src="{{asset('images/')~article.image }}">#}
     </div>
 </a>
-    {% endfor %}
-    
+    {% endfor %}   
 
 {% endblock %}
