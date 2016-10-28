@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block body %}
-<h1>ADMIN</h1>
+<h1>ADMINISTRATION</h1>
 
 
 {% for user in varUser %} {# On appelle cette boucle pour chaque instance #}
@@ -20,7 +20,7 @@
         <div class="profils"><p>Nom : {{ user.nom }}</p>
         <p>Prénom : {{ user.prenom }}</p>
         <p>Email : {{ user.email }}</p>
-        <p>Mot de passe : {{ user.motdepasse }}</p>
+        
         </div>
     </div>
     <div class="modifprofil">
