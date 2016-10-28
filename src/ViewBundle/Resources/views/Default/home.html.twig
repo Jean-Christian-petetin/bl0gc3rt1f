@@ -9,30 +9,33 @@
 <h1>SerialSeriz</h1>
 
 {% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
-<div class="news">
+<div class="displayPc news">
     {# On va chercher dans la colonne titre lie a l'instance correspondante #}
     <h3 class="titre">{{ article.titre }}</h3>
     <div class="soustitre">
     <p class="auteur">{{ article.auteur }}</p>
-    <p class="date">{{ article.date|date ('d/m/y')}}</p>
+    <p class="date">{{ article.date|date('d/m/y') }}</p>
     </div>
     <div class="annonce"><p>{{ article.sujet }}</p>
     {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
     <img src="{{asset('images/')~article.image }}">
     </div>
 </div>
-{% endfor %}
-{#<div class="displayPhone">
-    {% for article in varArticle %} {# On apple cette boucle pour chanque instance 
-        <div class="news">
-            {# On va chercher dans la colonne titre lie a l'instance correspondante #}
-            {#<h3 class="titre">{{ article.titre }}</h3>
-            <div class="annonce">#}
-            {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
-            {#<p class="auteur">{{ article.auteur }}</p>
-            <p class="date">{{ article.date }}</p>
-            </div>
+
+<a class="displayPhone" href="{{ path("versionTel",{"id":article.id})}}">    
+    <div class="news">
+        {# On va chercher dans la colonne titre lie a l'instance correspondante #}
+        <h3 class="titre">{{ article.titre }}</h3>
+        <div class="soustitre">
+        <p class="auteur">{{ article.auteur }}</p>
+        <p class="date">{{ article.date|date('d/m/y') }}</p>
         </div>
+        <div class="annonce"><p>{{ article.sujet }}</p>
+        {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
+{#        <img src="{{asset('images/')~article.image }}">#}
+        </div>
+    </div>
+</a>
     {% endfor %}
-</div>#}
+
 {% endblock %}

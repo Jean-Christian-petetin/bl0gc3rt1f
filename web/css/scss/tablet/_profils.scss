@@ -1,0 +1,28 @@
+.profil{
+    text-align: center;
+    display: inline;
+    
+    .imgprofil {
+        width: 20%;
+        border: solid $detail1 3px;
+    }
+}
+
+.modifprofil {
+    text-align: center;
+    
+    .editprofil {
+        color: black;
+        border: solid 1px $detail1;
+        border-radius:5px;
+        text-decoration: none;
+    }
+    
+    .deleteprofil {
+        color: black;
+        border: solid 1px $detail1;
+        border-radius:5px;
+        text-decoration: none;
+    }
+
+}

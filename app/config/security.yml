@@ -32,7 +32,6 @@ security:
             form_login:
                 login_path: home
                 check_path: loginCheck
-                default_target_path: /
             logout:
                 path: logOut
                 target: /
