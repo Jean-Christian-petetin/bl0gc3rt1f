@@ -7,8 +7,8 @@
         * Symfony 2.8
 
 ##Lien utile
-        * [Framapad] https://mypads.framapad.org/mypads/?/mypads/group/blog-certif-wv6227yk/pad/view/carnet-de-bord-yz6m27g6
-        * [Trello] https://trello.com/b/DZ1j00Xk/blog-certif
+        * [Framapad] <https://mypads.framapad.org/mypads/?/mypads/group/blog-certif-wv6227yk/pad/view/carnet-de-bord-yz6m27g6>
+        * [Trello] <https://trello.com/b/DZ1j00Xk/blog-certif>
 
 ##Procédure d'installation (Netbeans IDE 8.1)
         1. Projet Click droit, composer, install dev.
