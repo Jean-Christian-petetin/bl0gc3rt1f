@@ -4,23 +4,28 @@
     {{ parent() }}
     - Administration
     {% endblock %}
+    
+{% block meta %}
+  <meta name="description" content="{{'Page de profil'|trans}}" />
+{% endblock %}
+
 {% block body %}
-<h1>ADMIN</h1>
+<h1>ADMINISTRATION</h1>
 
 
 {% for user in varUser %} {# On appelle cette boucle pour chaque instance #}
 <div>
     <div class="profil">
         <div><img class="imgprofil" src="{{asset('images/')~user.avatar }}"></div>
-        <div><p>Nom : {{ user.nom }}</p>
+        <div class="profils"><p>Nom : {{ user.nom }}</p>
         <p>Prénom : {{ user.prenom }}</p>
         <p>Email : {{ user.email }}</p>
         
         </div>
     </div>
     <div class="modifprofil">
-    <a class="editprofil" href="{{ path('editProfils',{'id':user.id})}}">Modifier</a>
-    <a class="deleteprofil" href="{{ path('deleteProfils',{'id':user.id})}}">Supprimer</a>
+        <p><a class="editprofil" href="{{ path('editProfils',{'id':user.id})}}">Modifier</a>
+            <a class="deleteprofil" href="{{ path('deleteProfils',{'id':user.id})}}">Supprimer</a></p>
     </div>
 </div>
         

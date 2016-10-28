@@ -22,7 +22,7 @@ div.modif {
     a{
         margin-left: 5px;
         margin-right: 10px; 
-        ext-decoration: none;
+        text-decoration: none;
     }
     
     a:visited, a:link, a:active, a:hover {
@@ -35,6 +35,15 @@ div.modif {
 
 .aauteur, .adate {  
     display: inline;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85em;
+    
+    a{
+        text-decoration: none;
+    }
 }
 
 

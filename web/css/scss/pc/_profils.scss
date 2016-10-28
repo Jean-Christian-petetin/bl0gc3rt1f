@@ -1,25 +1,26 @@
-.profil{
+.profil, .inscription{ /*centrage des objets*/
     text-align: center;
-    display: inline;
     
-    .imgprofil {
+    .imgprofil { /*mise une taille de base pour l'image de profil et un border pour stylé*/
         width: 20%;
         border: solid $detail1 3px;
     }
 }
 
-.modifprofil {
+.modifprofil {/*centrage des boutons*/ 
     text-align: center;
     
-    .editprofil {
+    .editprofil { /*mise en forme du bouton*/ 
         color: black;
+        padding: 5px;
         border: solid 1px $detail1;
         border-radius:5px;
         text-decoration: none;
     }
     
-    .deleteprofil {
+    .deleteprofil { /*mise en forme du bouton*/ 
         color: black;
+        padding: 5px;
         border: solid 1px $detail1;
         border-radius:5px;
         text-decoration: none;

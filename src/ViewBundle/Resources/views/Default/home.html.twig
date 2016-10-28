@@ -4,6 +4,10 @@
     {{ parent() }}
     - Accueil
 {% endblock %}
+
+{% block meta %}
+  <meta name="description" content="{{"Page d'acceuil avec les news"|trans}}" />
+{% endblock %}
     
 {% block body %}
 <h1>SerialSeriz</h1>
@@ -26,20 +30,27 @@
     <img src="{{asset('images/')~article.image }}">
     </div>
 </div>
+    
+<div class="displayTablet contenant">
+        <button class="toggle"><h3>{{ article.titre }}</h3></button>
+        <div class="contenu">
+            <p>{{ article.auteur }}</p>
+            <p class="date">{{ article.date|date('d/m/y') }}</p>
+            <p>{{ article.sujet }}</p>
+            <img src="{{asset('images/')~article.image }}">
+    </div>
+</div>
 
 <a class="displayPhone" href="{{ path("versionTel",{"id":article.id})}}">    
     <div class="news">
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
         <h3 class="titre">{{ article.titre }}</h3>
         <div class="soustitre">
-            
-        <p class="auteur">{{ article.auteur }}</p>
-        <p class="date">{{ article.date|date('d/m/y') }}</p>
+            <p class="auteur">{{ article.auteur }}</p>
+            <p class="date">{{ article.date|date('d/m/y') }}</p>
         </div>
-        <div class="annonce"><p>{{ article.sujet }}</p>
         {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
 {#        <img src="{{asset('images/')~article.image }}">#}
-        </div>
     </div>
 </a>
     {% endfor %}

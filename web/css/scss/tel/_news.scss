@@ -4,6 +4,14 @@
     margin-bottom: 20px;
  }
 
+.soustitre { /*j'aligne les deux textes*/
+    display: flex;
+         
+    .auteur{ /*mise en place d'une marge pour espacer le soustitre*/
+         margin-right: 20px;
+    }
+}
+
 img {
     float: left;
     width: 100%;
@@ -15,6 +23,7 @@ img {
     padding: 1em;
     background-color: $detail1;
     font-size: 1.50em;
+    margin-top: 10px;
 }
 
 .article {
@@ -33,11 +42,23 @@ img {
     display: none;
 }
 
+.retourB {
+    color: black;
+    border: solid 1px $detail1;
+    border-radius:5px;
+    text-decoration: none; 
+}
+
 .displayPc{
+    display: none;
+}
+
+.displayTablet{
     display: none;
 }
 
 .displayPhone{
     display: block;
+    text-decoration: none;
 }
 

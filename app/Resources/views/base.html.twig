@@ -12,31 +12,29 @@
     <body>
         <img class="banniere displayPc" src="{{ asset('images/banniere.png')}}">
         <nav>
-            <ul>
-                <li><a href="{{ path('inscriptionUser')}}">Sign in</a></li>
+            <ul>	
                 <li><a href="{{ path('home')}}">News</a></li>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <li><a href="{{ path('admin')}}">Admin</a></li>
-                {%endif %}
+                {% if is_granted ('ROLE_USER') %}
+                <li><a href="{{ path('adminProfils')}}">Profils</a></li>
+                {% endif %}	
+                {% if is_granted ('ROLE_ADMIN') %}
+                <li><a href="{{ path('admin')}}">Admin</a></li>
+                {% endif %}	
+
                 {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('adminProfils')}}">Profils</a></li>
-                {% endif %}
-                
-                {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN')%}
-                    <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
+                <li><a class="active" href="{{ path('logOut')}}">logout</a></li>
                 {% else %}
+                <li><a href="{{ path('inscriptionUser')}}">Sign in</a></li>
                 <li><a href="{{ path('loGin') }}">login</a></li>
-                    {#<form action="{{ path('loginCheck')}}" method="post">
-                        <input type="text" id="email" name="_username" placeholder="Email" value=""/>
-                        <input type="password" id="motdepasse" name="_password" placeholder="mot de passe" value=""/>
-                        <input type="submit" value="Login"/>
-                    </form>#}
                 {% endif %}
             </ul>
         </nav>
        
         {% block body %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script type="text/javascript" src="{{ asset('js/toggleTablet.js')}}"></script>
+        {% endblock %}
     </body>
 </html>

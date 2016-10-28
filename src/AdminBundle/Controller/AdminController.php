@@ -139,7 +139,7 @@ class AdminController extends Controller {
     }
 
     /**
-     * @Route("/admin/edit/profils/{id}",name="editProfils")
+     * @Route("/user/edit/profils/{id}",name="editProfils")
      * @Template("AdminBundle:Default:modifProfils.html.twig")
      */
     public function editProfils($id) {   
@@ -152,7 +152,7 @@ class AdminController extends Controller {
     }
 
     /**
-     * @Route("/admin/update/profils/{id}",name="validProfils")
+     * @Route("/user/update/profils/{id}",name="validProfils")
      */
     public function updateProfils(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();

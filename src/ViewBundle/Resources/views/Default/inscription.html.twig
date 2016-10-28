@@ -4,17 +4,22 @@
     {{ parent() }}
     - Inscription
     {% endblock %}
+    
+{% block meta %}
+  <meta name="description" content="{{"Page d'inscription"|trans}}" />
+{% endblock %}
+
 {% block body %}
 <h1>INSCRIPTION</h1>
 
-<div>
+<div class="inscription">
     {{ form_start(formAddUser,{'attr':{'action':path('inscription')}})}}
-        {{ form_row(formAddUser.nom) }}
-        {{ form_row(formAddUser.prenom) }}
-        {{ form_row(formAddUser.email) }}
-        {{ form_row(formAddUser.motdepasse) }}
-        {{ form_row(formAddUser.avatar) }}
-        <input type="submit" value="Valider" />
+    <p>{{ form_row(formAddUser.nom) }}</p>
+        <p>{{ form_row(formAddUser.prenom) }}</p>
+        <p>{{ form_row(formAddUser.email) }}</p>
+        <p>{{ form_row(formAddUser.motdepasse) }}</p>
+        <p>{{ form_row(formAddUser.avatar) }}</p>
+        <p><input type="submit" value="Valider" /></p>
 </div>
 
 {% endblock %}

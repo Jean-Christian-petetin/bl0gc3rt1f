@@ -1,430 +1,84 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f7fbfa; }
+/*
+Error: File to import not found or unreadable: ajout.
+        on line 5 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss
+        from line 4 of /var/www/html/blogCertif/web/css/scss/import.scss
 
-h1 {
-  text-align: center;
-  font-size: 3em; }
+1: @import "variables";
+2: @import "general";
+3: @media (max-width:480px){
+4:     @import "tel/importTel";
+5: }
+6: @media (min-width: 481px) and (max-width: 1023px){
+7:     @import "tablet/importTablet";
+8: }
+9: @media (min-width: 1024px){
+10:     @import "pc/importPc";
 
-@media (max-width: 480px) {
-  .sousmenu {
-    list-style-type: none;
-    margin: 0;
-    height: 30%;
-    font-size: 1em;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    background-color: #b1cccd; }
-    .sousmenu li {
-      display: inline-block; }
-      .sousmenu li a {
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none; }
-
-  nav {
-    margin: 0;
-    padding: 0;
-    height: 30%;
-    font-size: 1em; }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #cbddde; }
-    nav li {
-      float: left; }
-    nav li:last-child {
-      float: right; }
-    nav a {
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none; }
-    nav .active {
-      background-color: #519d9e; }
-    nav form {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      padding-bottom: 10px;
-      background-color: #cbddde;
-      font-size: 1em;
-      padding-top: 2%; }
-    nav #email, nav #motdepasse {
-      width: 100px;
-      height: 20px;
-      font-size: 1em; }
-    nav .login {
-      width: 200px;
-      height: 100px; }
-
-  .news {
-    width: 90%;
-    margin: auto;
-    margin-bottom: 20px; }
-
-  img {
-    float: left;
-    width: 100%; }
-
-  .titre {
-    text-align: center;
-    margin: 0;
-    padding: 1em;
-    background-color: #519d9e;
-    font-size: 1.50em; }
-
-  .article {
-    text-align: justify;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px; }
-
-  .annonce, .image {
-    display: inline-block;
-    font-size: 1em; }
-
-  .image {
-    display: none; }
-
-  .displayPc {
-    display: none; }
-
-  .displayPhone {
-    display: block; }
-
-  h3 {
-    background-color: #519d9e;
-    margin: 0;
-    padding: 1em;
-    margin-top: 10px; }
-
-  a:visited, a:link, a:active, a:hover {
-    color: black; }
-
-  a.ajouter {
-    text-decoration: none;
-    padding: 5px;
-    text-align: center; }
-
-  div.modif {
-    margin-bottom: 10px;
-    display: flex; }
-    div.modif a {
-      margin-left: 5px;
-      margin-right: 10px;
-      ext-decoration: none; }
-    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; }
-
-  .aauteur, .adate {
-    display: inline; }
-
-  .profil {
-    text-align: center; } }
-@media (min-width: 481px) and (max-width: 1023px) {
-  .sousmenu {
-    list-style-type: none;
-    padding: 0px;
-    height: 30%;
-    font-size: 1em;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    background-color: #519d9e; }
-    .sousmenu li {
-      display: inline-block; }
-      .sousmenu li a {
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none; }
-
-  .banniere {
-    width: 100%;
-    margin-bottom: 0; }
-
-  nav {
-    margin: 0;
-    padding: 0;
-    height: 30%;
-    font-size: 1em; }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #cbddde; }
-    nav li {
-      float: left; }
-    nav li:last-child {
-      float: right; }
-    nav a {
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none; }
-    nav .active {
-      background-color: #519d9e; }
-    nav form {
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      padding-bottom: 10px;
-      background-color: #cbddde;
-      font-size: 1em;
-      padding-top: 2%; }
-    nav #email, nav #motdepasse {
-      width: 100px;
-      height: 20px;
-      font-size: 1em; }
-    nav .login {
-      width: 200px;
-      height: 100px; }
-
-  .news {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px; }
-
-  .soustitre {
-    display: flex; }
-    .soustitre .auteur {
-      margin-right: 20px; }
-
-  .titre {
-    text-align: center;
-    padding: 1em;
-    background-color: #519d9e;
-    font-size: 1.50em;
-    margin-bottom: 0; }
-
-  .article {
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px; }
-
-  .annonce, .image {
-    display: inline-block;
-    font-size: 1em;
-    text-align: justify; }
-
-  div.annonce img {
-    float: left;
-    width: 100%;
-    margin-bottom: 20px; }
-
-  .displayPc {
-    display: block; }
-
-  .displayPhone {
-    display: none; }
-
-  a:visited, a:link, a:active, a:hover {
-    color: black; }
-
-  a.ajouter {
-    text-decoration: none;
-    padding: 5px;
-    margin-left: 70px;
-    text-align: center;
-    color: black;
-    border: solid 1px #519d9e;
-    border-radius: 5px;
-    margin-bottom: 15px; }
-
-  div.modif {
-    margin-bottom: 10px;
-    display: flex;
-    width: 90%; }
-    div.modif a {
-      margin-left: 5px;
-      margin-right: 10px;
-      text-decoration: none; }
-    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; }
-
-  .profil {
-    text-align: center;
-    display: inline; }
-    .profil .imgprofil {
-      width: 20%;
-      border: solid #519d9e 3px; }
-
-  .modifprofil {
-    text-align: center; }
-    .modifprofil .editprofil {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; }
-    .modifprofil .deleteprofil {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; } }
-@media (min-width: 1024px) {
-  .sousmenu {
-    list-style-type: none;
-    padding: 0px;
-    height: 30%;
-    font-size: 1em;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    background-color: #cbddde; }
-    .sousmenu li {
-      display: inline-block; }
-      .sousmenu li a {
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none; }
-
-  .banniere {
-    width: 100%;
-    margin-bottom: 0; }
-
-  nav {
-    margin: 0;
-    padding: 0;
-    height: 30%;
-    font-size: 1em; }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #cbddde; }
-    nav li {
-      float: left; }
-    nav li:last-child {
-      float: right; }
-    nav a {
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none; }
-    nav .active {
-      background-color: #519d9e; }
-    nav form {
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      padding-bottom: 10px;
-      background-color: #cbddde;
-      font-size: 1em;
-      padding-top: 2%; }
-    nav #email, nav #motdepasse {
-      width: 100px;
-      height: 20px;
-      font-size: 1em; }
-    nav .login {
-      width: 200px;
-      height: 100px; }
-
-  .news {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px; }
-
-  .soustitre {
-    display: flex; }
-    .soustitre .auteur {
-      margin-right: 20px; }
-
-  .titre {
-    text-align: center;
-    padding: 1em;
-    background-color: #519d9e;
-    font-size: 1.50em;
-    margin-bottom: 0; }
-
-  .article {
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px; }
-
-  .annonce, .image {
-    display: inline-block;
-    font-size: 1em;
-    text-align: justify; }
-
-  div.annonce img {
-    float: left;
-    width: 100%;
-    margin-bottom: 20px; }
-
-  .displayPc {
-    display: block; }
-
-  .displayPhone {
-    display: none; }
-
-  a:visited, a:link, a:active, a:hover {
-    color: black; }
-
-  a.ajouter {
-    text-decoration: none;
-    padding: 5px;
-    margin-left: 70px;
-    text-align: center;
-    color: black;
-    border: solid 1px #519d9e;
-    border-radius: 5px;
-    margin-bottom: 15px; }
-
-  div.modif {
-    margin-bottom: 10px;
-    display: flex;
-    width: 90%; }
-    div.modif a {
-      margin-left: 5px;
-      margin-right: 10px;
-      text-decoration: none; }
-    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; }
-
-  .profil {
-    text-align: center;
-    display: inline; }
-    .profil .imgprofil {
-      width: 20%;
-      border: solid #519d9e 3px; }
-
-  .modifprofil {
-    text-align: center; }
-    .modifprofil .editprofil {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; }
-    .modifprofil .deleteprofil {
-      color: black;
-      border: solid 1px #519d9e;
-      border-radius: 5px;
-      text-decoration: none; } }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+/var/www/html/blogCertif/web/css/scss/tel/_importTel.scss:5
+/var/www/html/blogCertif/web/css/scss/import.scss:4
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:515:in `visit_media'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:391:in `run'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ajout.\A         on line 5 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss\A         from line 4 of /var/www/html/blogCertif/web/css/scss/import.scss\A \A 1: @import \"variables\";\A 2: @import \"general\";\A 3: @media (max-width:480px){\A 4:     @import \"tel/importTel\";\A 5: }\A 6: @media (min-width: 481px) and (max-width: 1023px){\A 7:     @import \"tablet/importTablet\";\A 8: }\A 9: @media (min-width: 1024px){\A 10:     @import \"pc/importPc\";"; }
