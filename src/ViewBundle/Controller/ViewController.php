@@ -16,11 +16,16 @@ class ViewController extends Controller
     public function getHome()
     {   
         //On appele l'entity manager de doctrine.
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine();
         //On va chercher en base de donnée toutes les instances de l'entité Article qui ont le booleen de la colonne publier a 1.
         $article = $em->getRepository("AdminBundle:Article")->findBy(array('publier' => '1'), array('id'=>'desc'));
         //On lie chaque article dans une variable.
-        return array("varArticle" => $article);
+        $emp = $this->getDoctrine();
+        //On va chercher en base de donnée toutes les instances de l'entité User.
+        $user = $emp->getRepository("AdminBundle:User")->findAll();
+        return array("varArticle" => $article,"varUser" => $user);
+        
+        
     }
     
     /**
@@ -42,7 +47,10 @@ class ViewController extends Controller
         //On va chercher en base de donnée toutes les instances de l'entité Article.
         $article = $em->getRepository("AdminBundle:Article")->findBy(array(), array('id'=>'desc'));
         //On lie chaque article dans une variable.
-        return array("varArticle" => $article);
+        $emp = $this->getDoctrine();
+        //On va chercher en base de donnée toutes les instances de l'entité User.
+        $user = $emp->getRepository("AdminBundle:User")->findAll();
+        return array("varArticle" => $article,"varUser" => $user);
     }
     
     /**
@@ -82,7 +90,7 @@ class ViewController extends Controller
         //On appele l'entity manager de doctrine.
         $em = $this->getDoctrine()->getManager();
         //On va chercher en base de donnée toutes les instances de l'entité User.
-        $user = $em->getRepository("AdminBundle:User")->findAll();
+        $user = $em->getRepository("AdminBundle:User")->findBy();
         //On lie user dans une variable.
         return array("varUser" => $user);
     }
