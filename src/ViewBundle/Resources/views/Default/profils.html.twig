@@ -4,6 +4,11 @@
     {{ parent() }}
     - Administration
     {% endblock %}
+    
+{% block meta %}
+  <meta name="description" content="{{'Page de profil'|trans}}" />
+{% endblock %}
+
 {% block body %}
 <h1>ADMIN</h1>
 
@@ -12,7 +17,7 @@
 <div>
     <div class="profil">
         <div><img class="imgprofil" src="{{asset('images/')~user.avatar }}"></div>
-        <div><p>Nom : {{ user.nom }}</p>
+        <div class="profils"><p>Nom : {{ user.nom }}</p>
         <p>Prénom : {{ user.prenom }}</p>
         <p>Email : {{ user.email }}</p>
         <p>Mot de passe : {{ user.motdepasse }}</p>

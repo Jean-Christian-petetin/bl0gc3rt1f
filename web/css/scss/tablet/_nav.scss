@@ -1,26 +1,23 @@
-.sousmenu { /*remise du padding a 0, mise en place de la hauteur, mise en place de la taille de font, retrait du style de la liste, et couleur du fond*/
-    padding: 0;
-    margin: 0;
+.sousmenu {
+    list-style-type: none;
+    padding: 0px;
     height: 30%;
     font-size: 1em;
     list-style-type: none;
+    margin: 0;
     overflow: hidden;
-    background-color: $detail2;
+    background-color: $detail1;
     
-    li { /*mettre les objets cote a cote*/
+    li {
         display: inline-block; 
         
-        a { /* mise en couleur noir du lien, padding pour grossir la barre nav, retrait de la deco de texte*/
+        a {
             display: block;
             color: black;
+            text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
-        
-        a:hover {
-            background-color: $detail1;
-        }
-        
     }
 }
 
@@ -58,10 +55,6 @@ nav {
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-        }
-        
-        a:hover {
-            background-color: $detail1;
         }
         
         .active {

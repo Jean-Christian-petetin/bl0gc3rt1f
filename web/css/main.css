@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -7,147 +8,510 @@ h1 {
   text-align: center;
   font-size: 3em; }
 
-.sousmenu {
-  list-style-type: none;
-  padding: 0px;
-  height: 30%;
-  font-size: 1em;
-  list-style-type: none;
-  margin: 0;
-  overflow: hidden;
-  background-color: #cbddde; }
-  .sousmenu li {
-    display: inline-block; }
-    .sousmenu li a {
+textarea {
+  resize: none;
+  width: 400px;
+  height: 200px; }
+
+@media (max-width: 480px) {
+  .sousmenu {
+    list-style-type: none;
+    margin: 0;
+    height: 30%;
+    font-size: 1em;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #b1cccd; }
+    .sousmenu li {
+      display: inline-block; }
+      .sousmenu li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none; }
+
+  nav {
+    margin: 0;
+    padding: 0;
+    height: 30%;
+    font-size: 0.80em; }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #cbddde; }
+    nav li {
+      float: left; }
+    nav li:last-child {
+      float: right; }
+    nav a {
       display: block;
       color: black;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none; }
-      .sousmenu li a a:hover {
-        color: pink; }
+    nav .active {
+      background-color: #519d9e; }
+    nav form {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      padding-bottom: 10px;
+      background-color: #cbddde;
+      font-size: 1em;
+      padding-top: 2%; }
+    nav #email, nav #motdepasse {
+      width: 100px;
+      height: 20px;
+      font-size: 1em; }
+    nav .login {
+      width: 200px;
+      height: 100px; }
 
-.banniere {
-  width: 100%;
-  margin-bottom: 0; }
+  .news {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px; }
 
-nav {
-  margin: 0;
-  padding: 0;
-  height: 30%;
-  font-size: 1em; }
-  nav ul {
+  .soustitre {
+    /*j'aligne les deux textes*/
+    display: flex; }
+    .soustitre .auteur {
+      /*mise en place d'une marge pour espacer le soustitre*/
+      margin-right: 20px; }
+
+  img {
+    float: left;
+    width: 100%; }
+
+  .titre {
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+    background-color: #519d9e;
+    font-size: 1.50em;
+    margin-top: 10px; }
+
+  .article {
+    text-align: justify;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px; }
+
+  .annonce, .image {
+    display: inline-block;
+    font-size: 1em; }
+
+  .image {
+    display: none; }
+
+  .retourB {
+    color: black;
+    border: solid 1px #519d9e;
+    border-radius: 5px;
+    text-decoration: none; }
+
+  .displayPc {
+    display: none; }
+
+  .displayPhone {
+    display: block;
+    text-decoration: none; }
+
+  h3 {
+    background-color: #519d9e;
+    margin: 0;
+    padding: 1em;
+    margin-top: 10px; }
+
+  a:visited, a:link, a:active, a:hover {
+    color: black; }
+
+  a.ajouter {
+    text-decoration: none;
+    padding: 5px;
+    text-align: center; }
+
+  div.modif {
+    margin-bottom: 10px;
+    display: flex; }
+    div.modif a {
+      margin-left: 5px;
+      margin-right: 10px;
+      text-decoration: none; }
+    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
+      color: black;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+
+  .aauteur, .adate {
+    display: inline; }
+
+  footer {
+    text-align: center;
+    font-size: 0.85em; }
+    footer a {
+      text-decoration: none; }
+
+  .profil {
+    text-align: right;
+    margin-right: 10px; }
+    .profil .imgprofil {
+      /*mise une taille de base pour l'image de profil et un border pour stylé*/
+      width: 30%;
+      border: solid #519d9e 3px; }
+
+  .modifprofil {
+    /*centrage des boutons*/
+    text-align: center; }
+    .modifprofil .editprofil {
+      /*mise en forme du bouton*/
+      color: black;
+      padding: 5px;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+    .modifprofil .deleteprofil {
+      /*mise en forme du bouton*/
+      color: black;
+      padding: 5px;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+
+  form {
+    text-align: center; }
+    form div {
+      margin-bottom: 5px; }
+
+  label {
+    display: block;
+    margin-bottom: 5px; } }
+@media (min-width: 481px) and (max-width: 1023px) {
+  .sousmenu {
+    list-style-type: none;
+    padding: 0px;
+    height: 30%;
+    font-size: 1em;
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: #cbddde; }
-  nav li {
-    float: left; }
-  nav li:last-child {
-    float: right; }
-  nav a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none; }
-  nav .active {
     background-color: #519d9e; }
-  nav form {
+    .sousmenu li {
+      display: inline-block; }
+      .sousmenu li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none; }
+
+  .banniere {
+    width: 100%;
+    margin-bottom: 0; }
+
+  nav {
     margin: 0;
     padding: 0;
-    text-align: right;
-    padding-bottom: 10px;
-    background-color: #cbddde;
-    font-size: 1em;
-    padding-top: 2%; }
-  nav #email, nav #motdepasse {
-    width: 100px;
-    height: 20px;
+    height: 30%;
     font-size: 1em; }
-  nav .login {
-    width: 200px;
-    height: 100px; }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #cbddde; }
+    nav li {
+      float: left; }
+    nav li:last-child {
+      float: right; }
+    nav a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none; }
+    nav .active {
+      background-color: #519d9e; }
+    nav form {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      padding-bottom: 10px;
+      background-color: #cbddde;
+      font-size: 1em;
+      padding-top: 2%; }
+    nav #email, nav #motdepasse {
+      width: 100px;
+      height: 20px;
+      font-size: 1em; }
+    nav .login {
+      width: 200px;
+      height: 100px; }
 
-.news {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; }
+  .news {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; }
 
-.soustitre {
-  display: flex; }
-  .soustitre .auteur {
-    margin-right: 20px; }
+  .soustitre {
+    display: flex; }
+    .soustitre .auteur {
+      margin-right: 20px; }
 
-.titre {
-  text-align: center;
-  padding: 1em;
-  background-color: #519d9e;
-  font-size: 1.50em;
-  margin-bottom: 0; }
+  .titre {
+    text-align: center;
+    padding: 1em;
+    background-color: #519d9e;
+    font-size: 1.50em;
+    margin-bottom: 0; }
 
-.article {
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px; }
+  .article {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px; }
 
-.annonce, .image {
-  display: inline-block;
-  font-size: 1em;
-  text-align: justify; }
+  .annonce, .image {
+    display: inline-block;
+    font-size: 1em;
+    text-align: justify; }
 
-div.annonce img {
-  float: left;
-  width: 100%;
-  margin-bottom: 20px; }
+  div.annonce img {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px; }
 
-a:visited, a:link, a:active, a:hover {
-  color: black; }
+  .displayPc {
+    display: block; }
 
-a.ajouter {
-  text-decoration: none;
-  padding: 5px;
-  margin-left: 70px;
-  text-align: center;
-  color: black;
-  border: solid 1px #519d9e;
-  border-radius: 5px;
-  margin-bottom: 15px; }
+  .displayPhone {
+    display: none; }
 
-div.modif {
-  margin-bottom: 10px;
-  display: flex;
-  width: 90%; }
-  div.modif a {
-    margin-left: 5px;
-    margin-right: 10px;
-    text-decoration: none; }
-  div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
+  a:visited, a:link, a:active, a:hover {
+    color: black; }
+
+  a.ajouter {
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 70px;
+    text-align: center;
     color: black;
     border: solid 1px #519d9e;
     border-radius: 5px;
-    text-decoration: none; }
+    margin-bottom: 15px; }
 
-.profil, .inscription {
-  text-align: center;
-  display: inline; }
-  .profil .imgprofil, .inscription .imgprofil {
-    width: 20%;
-    border: solid #519d9e 3px; }
+  div.modif {
+    margin-bottom: 10px;
+    display: flex;
+    width: 90%; }
+    div.modif a {
+      margin-left: 5px;
+      margin-right: 10px;
+      text-decoration: none; }
+    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
+      color: black;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
 
-.modifprofil {
-  text-align: center; }
-  .modifprofil .editprofil {
+  .profil {
+    text-align: center;
+    display: inline; }
+    .profil .imgprofil {
+      width: 20%;
+      border: solid #519d9e 3px; }
+
+  .modifprofil {
+    text-align: center; }
+    .modifprofil .editprofil {
+      color: black;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+    .modifprofil .deleteprofil {
+      color: black;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; } }
+@media (min-width: 1024px) {
+  form {
+    text-align: center; }
+    form div {
+      margin-bottom: 5px; }
+
+  label {
+    display: block;
+    margin-bottom: 5px; }
+
+  .sousmenu {
+    /*remise du padding a 0, mise en place de la hauteur, mise en place de la taille de font, retrait du style de la liste, et couleur du fond*/
+    padding: 0;
+    margin: 0;
+    height: 30%;
+    font-size: 1em;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #cbddde; }
+    .sousmenu li {
+      /*mettre les objets cote a cote*/
+      display: inline-block; }
+      .sousmenu li a {
+        /* mise en couleur noir du lien, padding pour grossir la barre nav, retrait de la deco de texte*/
+        display: block;
+        color: black;
+        padding: 14px 16px;
+        text-decoration: none; }
+      .sousmenu li a:hover {
+        background-color: #519d9e; }
+
+  .banniere {
+    width: 100%;
+    margin-bottom: 0; }
+
+  nav {
+    margin: 0;
+    padding: 0;
+    height: 30%;
+    font-size: 1em; }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #cbddde; }
+    nav li {
+      float: left; }
+    nav li:last-child {
+      float: right; }
+    nav a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none; }
+    nav a:hover {
+      background-color: #519d9e; }
+    nav .active {
+      background-color: #519d9e; }
+    nav form {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      padding-bottom: 10px;
+      background-color: #cbddde;
+      font-size: 1em;
+      padding-top: 2%; }
+    nav #email, nav #motdepasse {
+      width: 100px;
+      height: 20px;
+      font-size: 1em; }
+    nav .login {
+      width: 200px;
+      height: 100px; }
+
+  .news {
+    /*taille de largeur, centrerage grace au margin auto et marge en bas pour le visuel*/
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; }
+
+  .soustitre {
+    /*j'aligne les deux textes*/
+    display: flex; }
+    .soustitre .auteur {
+      /*mise en place d'une marge pour espacer le soustitre*/
+      margin-right: 20px; }
+
+  .titre {
+    /*centrage du titre, ajout de padding mis en place couleur de fond taille de font et retrait de la marge du bas*/
+    text-align: center;
+    padding: 1em;
+    background-color: #519d9e;
+    font-size: 1.50em;
+    margin-bottom: 0; }
+
+  .annonce, .image {
+    /*pour mettre des espaces*/
+    display: inline-block; }
+
+  div.annonce img {
+    /*mise en taille de l'image a 100% */
+    width: 100%;
+    margin-bottom: 10px; }
+
+  .displayPc {
+    display: block; }
+
+  .displayPhone {
+    display: none; }
+
+  a:visited, a:link, a:active, a:hover {
+    color: black; }
+
+  a.ajouter {
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 70px;
+    text-align: center;
     color: black;
     border: solid 1px #519d9e;
     border-radius: 5px;
-    text-decoration: none; }
-  .modifprofil .deleteprofil {
-    color: black;
-    border: solid 1px #519d9e;
-    border-radius: 5px;
-    text-decoration: none; }
+    margin-bottom: 15px; }
+
+  div.modif {
+    margin-bottom: 10px;
+    display: flex;
+    width: 90%; }
+    div.modif a {
+      margin-left: 5px;
+      margin-right: 10px;
+      text-decoration: none; }
+    div.modif a:visited, div.modif a:link, div.modif a:active, div.modif a:hover {
+      color: black;
+      padding: 5px;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+
+  footer {
+    font-size: 0.90em;
+    margin-bottom: 10px;
+    text-align: center; }
+    footer a {
+      text-decoration: none; }
+    footer a:hover {
+      color: #519d9e; }
+
+  .profil, .inscription {
+    /*centrage des objets*/
+    text-align: center; }
+    .profil .imgprofil, .inscription .imgprofil {
+      /*mise une taille de base pour l'image de profil et un border pour stylé*/
+      width: 20%;
+      border: solid #519d9e 3px; }
+
+  .modifprofil {
+    /*centrage des boutons*/
+    text-align: center; }
+    .modifprofil .editprofil {
+      /*mise en forme du bouton*/
+      color: black;
+      padding: 5px;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; }
+    .modifprofil .deleteprofil {
+      /*mise en forme du bouton*/
+      color: black;
+      padding: 5px;
+      border: solid 1px #519d9e;
+      border-radius: 5px;
+      text-decoration: none; } }
 
 /*# sourceMappingURL=main.css.map */

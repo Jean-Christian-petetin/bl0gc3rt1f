@@ -4,6 +4,11 @@
     {{ parent() }}
     - Inscription
     {% endblock %}
+    
+{% block meta %}
+  <meta name="description" content="{{"Page d'inscription"|trans}}" />
+{% endblock %}
+
 {% block body %}
 <h1>INSCRIPTION</h1>
 
