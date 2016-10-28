@@ -34,7 +34,7 @@ class Article
      * @var UploadedFile
      *
      * @ORM\Column(name="image", type="string", length=255)
-     * @File(mimeTypes={"image/jpg"})
+     * @File(mimeTypes={"image"})
      */
     private $image;
 
