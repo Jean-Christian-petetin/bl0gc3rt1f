@@ -1,6 +1,6 @@
 /*
 Error: File to import not found or unreadable: ajout.
-        on line 5 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss
+        on line 1 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss
         from line 4 of /var/www/html/blogCertif/web/css/scss/import.scss
 
 1: @import "variables";
@@ -9,13 +9,9 @@ Error: File to import not found or unreadable: ajout.
 4:     @import "tel/importTel";
 5: }
 6: @media (min-width: 481px) and (max-width: 1023px){
-7:     @import "tablet/importTablet";
-8: }
-9: @media (min-width: 1024px){
-10:     @import "pc/importPc";
 
 Backtrace:
-/var/www/html/blogCertif/web/css/scss/tel/_importTel.scss:5
+/var/www/html/blogCertif/web/css/scss/tel/_importTel.scss:1
 /var/www/html/blogCertif/web/css/scss/import.scss:4
 /var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
@@ -81,4 +77,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ajout.\A         on line 5 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss\A         from line 4 of /var/www/html/blogCertif/web/css/scss/import.scss\A \A 1: @import \"variables\";\A 2: @import \"general\";\A 3: @media (max-width:480px){\A 4:     @import \"tel/importTel\";\A 5: }\A 6: @media (min-width: 481px) and (max-width: 1023px){\A 7:     @import \"tablet/importTablet\";\A 8: }\A 9: @media (min-width: 1024px){\A 10:     @import \"pc/importPc\";"; }
+  content: "Error: File to import not found or unreadable: ajout.\A         on line 1 of /var/www/html/blogCertif/web/css/scss/tel/_importTel.scss\A         from line 4 of /var/www/html/blogCertif/web/css/scss/import.scss\A \A 1: @import \"variables\";\A 2: @import \"general\";\A 3: @media (max-width:480px){\A 4:     @import \"tel/importTel\";\A 5: }\A 6: @media (min-width: 481px) and (max-width: 1023px){"; }
