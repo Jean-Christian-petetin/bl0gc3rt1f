@@ -35,8 +35,11 @@ class AdminController extends Controller {
         $f = $this->createForm(ArticleType::class, $addNews);
         //On lie les champs de la vue et le formulaire.
         $f->handleRequest($request);
+        //Générer un nom unique pour le fichier avant de l'enregistrer
         $nomDuFichier = md5(uniqid()) . '.' . $addNews->getImage()->getClientOriginalExtension();
+        //Déplacez le fichier dans le répertoire où sont stockés les images
         $addNews->getImage()->move('../web/images', $nomDuFichier);
+        //Mettre à jour la propriété "image" pour stocker le nom du fichier
         $addNews->setImage($nomDuFichier);
         //On appele l'entity manager
         $em = $this->getDoctrine()->getManager();

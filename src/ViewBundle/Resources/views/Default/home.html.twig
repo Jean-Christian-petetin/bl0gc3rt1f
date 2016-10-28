@@ -8,14 +8,19 @@
 {% block body %}
 <h1>SerialSeriz</h1>
 
-{% for article in varArticle %} {# On apple cette boucle pour chanque instance #}
+ {# On apple cette boucle pour chanque instance #}
 <div class="displayPc news">
+    
+    {% for article in varArticle %}
     {# On va chercher dans la colonne titre lie a l'instance correspondante #}
     <h3 class="titre">{{ article.titre }}</h3>
     <div class="soustitre">
     <p class="auteur">{{ article.auteur }}</p>
     <p class="date">{{ article.date|date('d/m/y') }}</p>
     </div>
+    {% for user in varUser %}
+        <p>{{ user.nom }}</p>
+    {% endfor %}
     <div class="annonce"><p>{{ article.sujet }}</p>
     {# Meme principe que pour la premiere ligne et c'est pareil pour la suite #}
     <img src="{{asset('images/')~article.image }}">
@@ -27,6 +32,7 @@
         {# On va chercher dans la colonne titre lie a l'instance correspondante #}
         <h3 class="titre">{{ article.titre }}</h3>
         <div class="soustitre">
+            
         <p class="auteur">{{ article.auteur }}</p>
         <p class="date">{{ article.date|date('d/m/y') }}</p>
         </div>
@@ -37,5 +43,6 @@
     </div>
 </a>
     {% endfor %}
+    
 
 {% endblock %}
