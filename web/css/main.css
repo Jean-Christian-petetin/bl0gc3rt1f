@@ -24,6 +24,8 @@ h1 {
       text-align: center;
       padding: 14px 16px;
       text-decoration: none; }
+      .sousmenu li a a:hover {
+        color: pink; }
 
 .banniere {
   width: 100%;
